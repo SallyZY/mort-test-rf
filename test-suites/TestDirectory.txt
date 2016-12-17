@@ -1,0 +1,7 @@
+*** Settings ***
+Resource          ../pages/LoginPage.txt
+
+*** Test Cases ***
+TestDirectory
+    Open Browser    http://localhost:3000    chrome
+    User Login to Mort Web    zhangyi@bigeyedata.com    password

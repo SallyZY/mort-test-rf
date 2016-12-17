@@ -1,0 +1,18 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Modify Alias of File Dataset Columns
+    Wait Until Element Is Visible    xpath=//form/div/div[2]/div/table/tbody    20
+    Input Text    xpath=//form/div/div[2]/div/table/thead/tr/th[1]/div[2]/input    CustomerID
+
+Modify DataType of File Dataset Columns
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[7]/div[2]/Select    Numeric    #change"测试数值字段"类型为Numeric
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[9]/div[2]/Select    Datetime    #change"空日期字段"类型为Datetime
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[10]/div[2]/Select    Datetime    #change"测试日期"类型为Datetime
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[12]/div[2]/Select    Datetime    #change"流失日期"类型为Datetime
+    Focus    xpath=//form/div/div[2]/div/table/thead/tr/th[12]/div[2]/Select
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[14]/div[2]/Select    Numeric    #change""类型为Numeric
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[15]/div[2]/Select    Numeric    #change""类型为Numeric
+    Select From List By Value    xpath=//form/div/div[2]/div/table/thead/tr/th[16]/div[2]/Select    Numeric    #change""类型为Numeric
+    Click Button    xpath=//form/div/div[3]/div/button

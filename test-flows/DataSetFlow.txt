@@ -1,0 +1,47 @@
+*** Settings ***
+Resource          ../pages/MainPage.txt
+Resource          ../test-results/TestResults.txt
+Resource          ../pages/DatasetPages/RDBDatasetPages/SelectRDBDatasourcePage.txt
+Resource          ../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../pages/DatasetPages/RDBDatasetPages/PreviewRDBDatasetColumnsPage.txt
+Resource          ../pages/DatasetPages/PreviewDatasetImportPage.txt
+Resource          ../pages/DatasetPages/FileDatasetPages/PreviewFileDatasetColumnsPage.txt
+Resource          ../pages/DatasetPages/FileDatasetPages/SelectFileDatasourcePage.txt
+
+*** Keywords ***
+Create File Dataset
+    [Arguments]    ${dataset_name}
+    Select Dataset Tab in Navigation Bar
+    Open Create Dataset Page
+    Select File DataSource
+    Modify Alias of File Dataset Columns
+    Modify DataType of File Dataset Columns
+    Select Date Fields Preview Tab
+    Input Dataset Name    ${dataset_name}
+    Formate Datetime Column
+    Click Create Dataset Button
+
+Create MySQL Dataset
+    [Arguments]    ${dataset_name}
+    Select Dataset Tab in Navigation Bar
+    Open Create Dataset Page
+    Select RDB Datasource
+    Input SQL Query Statement
+    Preview Query Result
+    Select Date Fields Preview Tab
+    Input Dataset Name    ${dataset_name}
+    Click Create Dataset Button
+
+Check Dataset Details
+    Check Preview Data of Dataset
+    Check Import Records of Dataset
+
+Rename the Alias of Display Name
+    [Arguments]    ${alias_name}
+    Rename the Alias of Dataset Column    ${alias_name}
+
+Link to RDB Datasource from Dataset
+    Link to RDB Datasource
+
+Link to File Datasource from Dataset
+    Link to File Datasource

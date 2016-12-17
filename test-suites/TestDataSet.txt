@@ -1,0 +1,38 @@
+*** Settings ***
+Resource          ../test-flows/DataSetFlow.txt
+Resource          ../pages/LoginPage.txt
+Resource          ../test-results/TestResults.txt
+
+*** Test Cases ***
+TestFileDataset
+    [Documentation]    Include the following steps:
+    ...    1. Create new file dataset
+    ...    2. Rename the alias of column
+    ...    3. Check the import record
+    ...    4. Check the preview data
+    ...    5. Link to datasource
+    Open Browser    http://localhost:3000    chrome
+    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    Create File Dataset    FileDataset
+    Should See the New Created File Dataset    FileDataset
+    Rename the Alias of Display Name    ModifiedColumnName
+    Sleep    3
+    Check Dataset Details
+    Link to File Datasource from Dataset
+
+TestRDBDataset
+    [Documentation]    Include the following steps:
+    ...    1. Create new RDB dataset
+    ...    2. Rename the alias of column
+    ...    3. Check the import record
+    ...    4. Check the preview data
+    ...    5. Link to datasource
+    Open Browser    http://localhost:3000    chrome
+    Maximize Browser Window
+    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    Create MySQL Dataset    MySQLDataset
+    Should See RDB Dataset Created    MySQLDataset
+    Rename the Alias of Display Name    ModifiedColumnName
+    Sleep    3
+    Check Dataset Details
+    Link to RDB Datasource from Dataset

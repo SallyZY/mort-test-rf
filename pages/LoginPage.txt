@@ -1,0 +1,9 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+User Login to Mort Web
+    [Arguments]    ${user_name}    ${user_pwd}
+    Input Text    id=email    ${user_name}
+    Input Text    id=pass    ${user_pwd}
+    Click Button    css=form > filedset:nth-child(4) > button

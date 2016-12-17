@@ -1,0 +1,12 @@
+*** Settings ***
+Resource          ../pages/LoginPage.txt
+Resource          ../test-flows/DataSourceFlow.txt
+Resource          ../test-results/TestResults.txt
+Resource          ../test-flows/DirectoryFlow.txt
+
+*** Test Cases ***
+TestCreateMySQLDatasource
+    Open Browser    http://localhost:3000    chrome
+    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    Create MySQL Datasource    MySQLDatasource
+    Should See the New Created RDB Datasource    MySQLDatasource

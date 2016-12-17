@@ -1,0 +1,25 @@
+*** Settings ***
+Resource          ../pages/MainPage.txt
+Resource          ../pages/LoginPage.txt
+Resource          ../pages/UserManagePages.txt
+
+*** Test Cases ***
+TestCreateNewUser
+    [Documentation]    1. Create a new user
+    ...    2. Create a new role
+    ...    3. Create a new user group
+    Open Browser    http://localhost:3000    chrome
+    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    Open User Management Page
+    Create a New User    TestUser
+    Create a New Role    TestRole
+    Create a New User Group    TestUserGroup
+
+TestModifyUserGroup
+    [Documentation]    1. Add a user to user group
+    ...    2. Modify user group name
+    Open Browser    http://localhost:3000    chrome
+    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    Open User Management Page
+    Open User Group List Page
+    Add User to User Group

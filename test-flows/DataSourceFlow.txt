@@ -1,0 +1,14 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../pages/MainPage.txt
+Resource          DirectoryFlow.txt
+Resource          ../pages/DatasourcePages/ConfigRDBDatasourcePage.txt
+Resource          ../pages/DirectoryPages/FileDirectoryPage.txt
+
+*** Keywords ***
+Create MySQL Datasource
+    [Arguments]    ${datasource_name}
+    Select Datasource Tab in Navigation Bar
+    Select the First DataSource Directory
+    Open Create RDB Datasource Page
+    Config the Connection Parameters of RDB Datasource    ${datasource_name}

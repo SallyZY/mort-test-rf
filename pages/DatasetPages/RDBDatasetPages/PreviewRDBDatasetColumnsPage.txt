@@ -1,0 +1,14 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Input SQL Query Statement
+    Wait Until Element Is Visible    xpath=//textarea
+    Input Text    xpath=//textarea    select * from tab_production
+
+Preview Query Result
+    Input Text    xpath=//textarea    select * from tab_production
+    Click Link    xpath=//form/div/div[1]/div[1]/a
+    Wait Until Element Is Visible    xpath=//form/div/div[1]/div[2]/div/table    20
+    Sleep    5
+    Click Button    xpath=//div[3]/div/div[1]/div/div/div[1]/div/form/div/div[2]/div/button    #next step

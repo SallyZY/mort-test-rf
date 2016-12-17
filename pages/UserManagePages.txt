@@ -1,0 +1,82 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Create a New User
+    [Arguments]    ${user_name}
+    Open User List Page
+    Click Button    css=div.manageOperation > button
+    Wait Until Element Is Visible    css=div.ant-modal-content    20    ”找不到创建用户对话框“
+    Input Text    css=div.ant-modal-content > div.ant-modal-body > div > dl > dd:nth-child(1) > input    ${user_name}
+    Sleep    2
+    Input Text    css=div.ant-modal-content > div.ant-modal-body > div > dl > dd:nth-child(2) > input    TestUser@test.com
+    Sleep    2
+    Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
+    Sleep    5
+    Element Should Contain    css=div.userListTable.manageTable > div.tbody    ${user_name}
+
+Create a New Role
+    [Arguments]    ${role_name}
+    Open Role List Page
+    Click Button    css=div.manageOperation > button:nth-child(1)
+    Wait Until Element Is Visible    css=div.ant-modal-content    20    “找不新建角色对话框”
+    Input Text    css=div > div.role-name > input    ${role_name}
+    Sleep    2
+    Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(1) > div > div:nth-child(2) > span > i
+    Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(2) > div > div:nth-child(2) > span > i
+    Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(3) > div > div:nth-child(2) > span > i
+    Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(4) > div > div:nth-child(2) > span > i
+    Sleep    2
+    Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
+    Sleep    2
+    Element Should Contain    css=div.roleListTable.manageTable    ${role_name}
+
+Create a New User Group
+    [Arguments]    ${group_name}
+    Open User Group List Page
+    Click Button    css=div.manageOperation > button:nth-child(1)
+    Wait Until Element Is Visible    css=div.ant-modal-content    20    ”找不到创建用户组对话框“
+    Input Text    css= div.ant-modal-body > div > div > p > input    ${group_name}
+    Sleep    2
+    Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
+    Sleep    2
+    Element Should Contain    css=div.MainContent > div > div > div > div:nth-child(1) > div.user-group-list-table.manageTable    ${group_name}
+
+Open User List Page
+    Click Link    css=div.MainContent > div > ul > div:nth-child(2) > ul > li > ul > div:nth-child(2) > li > a
+    Wait Until Element Is Visible    css=div.userListTable    20    “找不到用户列表页面”
+
+Open Role List Page
+    Click Link    css=div.MainContent > div > ul > div:nth-child(2) > ul > li > ul > div:nth-child(4) > li > a
+    Wait Until Element Is Visible    css=div.roleListTable.manageTable    20    “找不到角色列表页面”
+
+Open User Group List Page
+    Click Link    css=div.MainContent > div > ul > div:nth-child(2) > ul > li > ul > div:nth-child(3) > li > a
+    Wait Until Element Is Visible    css=div.user-group-list-table.manageTable    20    “找不到用户组列表页面”
+
+Add User to User Group
+    Click Element    css=div.user-group-list-table.manageTable > div.tbody > div:nth-child(2) > div > div.operation > span:nth-child(1)
+    Wait Until Element Is Visible    css=div.view-user-group-content > div.user-group-table.manageTable
+    Input Text    css=div.manageList.view-user-group > div > div.view-user-group-content > div.add-new-user.clearfix > div > div > div > div > ul > li > div > input    TestUser TestUser@test.com
+    Wait Until Element Is Visible    css=body > div:nth-child(6) > div > div > div > ul > li
+    Click Element    css=body > div:nth-child(6) > div > div > div > ul > li
+    Click LInk    css=div.manageList.view-user-group > div > div.view-user-group-content > div.add-new-user.clearfix > a
+    Wait Until Element Contains    css=div.view-user-group-content    TestUser TestUser@test.com    20
+
+Edit User Name
+    [Arguments]    ${user_name}
+    [Documentation]    无法点中编辑／删除用户的弹出菜单
+    Open User List Page
+    Mouse Down    css=div.userListTable.manageTable > div.tbody > div:nth-child(1) > div > div:nth-child(5) > i
+    Wait Until Element Is Visible    xpath=/html/body/div[3]/div/div
+    Mouse Over    xpath=//div[3]/div/div/ul/li[1]
+    Click Element    xpath=//div[3]/div/div/ul/li[1]
+
+Modify User Group Name
+    [Arguments]    ${group_name}
+    Click Element    css=div.user-group-list-table.manageTable > div.tbody > div:nth-child(2) > div > div.operation > span:nth-child(3)
+    Wait Until Element Is Visible    css=div.ant-modal-content    20    “找不到修改用户组名对话框”
+    Input Text    css=div.ant-modal-body > div > div > p > input    ${group_name}
+    Sleep    2
+    Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
+    Wait Until Element Contains    css=div.user-group-list-table.manageTable    ${group_name}

@@ -1,0 +1,19 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Input Dataset Name
+    [Arguments]    ${dataset_name}
+    Input Text    name=name    ${dataset_name}
+
+Formate Datetime Column
+    Click Element    css=div.data-set-content > div > div > div:nth-child(3) > div > div > table > tbody > tr > td:nth-child(4) > div > i    #Click modify dateformate icon
+    Input Text    css=div.data-set-content > div > div > div:nth-child(3) > div > div > table > tbody > tr > td:nth-child(4) > div > span > input    yyyy/MM/dd HH:mm:ss    #Modify Date fromat
+    Click Element    css=div.data-set-content > div > div > div:nth-child(3) > div > div > table > tbody > tr:nth-child(2) > td:nth-child(4) > div > i
+    Input Text    css=div.data-set-content > div > div > div:nth-child(3) > div > div > table > tbody > tr:nth-child(2) > td:nth-child(4) > div > span > input    yyyy/MM/dd HH:mm:ss
+
+Click Create Dataset Button
+    Click Link    css=body > div:nth-child(6) > div > div:nth-child(1) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > a:nth-child(3)
+
+Select Date Fields Preview Tab
+    Click Link    xpath=//div[3]/div/div[1]/div/div/div[1]/div/div[1]/div[2]/div/ul/li[3]/a

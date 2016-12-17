@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../pages/MainPage.txt
+
+*** Keywords ***
+Create and Select a New Datasource Directory
+    [Arguments]    ${dict_name}
+    Select Datasource Tab in Navigation Bar
+    Create a New Directory    MyDataSource
+    Select the Third Directory

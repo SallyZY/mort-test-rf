@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161212 19:10:30.253" generator="Robot 3.0 (Python 2.7.6 on darwin)">
+<suite source="/Users/yingzhang/Code/Robot/mort-test/test-suites/TestDataSet.txt" id="s1" name="TestDataSet">
+<test id="s1-t1" name="TestFileDataset">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20161212 19:10:30.422" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'</msg>
+<status status="PASS" endtime="20161212 19:10:35.359" starttime="20161212 19:10:30.422"></status>
+</kw>
+<kw name="User Login to Mort Web" library="LoginPage">
+<arguments>
+<arg>zhangying@bigeyedata.com</arg>
+<arg>password123</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${user_name}</arg>
+</arguments>
+<msg timestamp="20161212 19:10:35.361" level="INFO">Typing text 'zhangying@bigeyedata.com' into text field 'id=email'</msg>
+<status status="PASS" endtime="20161212 19:10:35.518" starttime="20161212 19:10:35.361"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=pass</arg>
+<arg>${user_pwd}</arg>
+</arguments>
+<msg timestamp="20161212 19:10:35.519" level="INFO">Typing text 'password123' into text field 'id=pass'</msg>
+<status status="PASS" endtime="20161212 19:10:35.610" starttime="20161212 19:10:35.519"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>css=form &gt; filedset:nth-child(4) &gt; button</arg>
+</arguments>
+<msg timestamp="20161212 19:10:35.610" level="INFO">Clicking button 'css=form &gt; filedset:nth-child(4) &gt; button'.</msg>
+<status status="PASS" endtime="20161212 19:10:35.687" starttime="20161212 19:10:35.610"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:10:35.687" starttime="20161212 19:10:35.360"></status>
+</kw>
+<kw name="Create File Dataset" library="DataSetFlow">
+<arguments>
+<arg>MyNewDataset</arg>
+</arguments>
+<kw name="Open Create Dataset Page" library="MainPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20161212 19:10:38.690" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161212 19:10:38.690" starttime="20161212 19:10:35.689"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=div.header &gt; ul.menu &gt; li:nth-child(2) &gt; a</arg>
+</arguments>
+<msg timestamp="20161212 19:10:38.691" level="INFO">Clicking link 'css=div.header &gt; ul.menu &gt; li:nth-child(2) &gt; a'.</msg>
+<status status="PASS" endtime="20161212 19:10:38.863" starttime="20161212 19:10:38.691"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20161212 19:10:41.864" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161212 19:10:41.864" starttime="20161212 19:10:38.863"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=div.DataSetDirectoryTitle &gt; div &gt; h3 &gt; a</arg>
+</arguments>
+<msg timestamp="20161212 19:10:41.865" level="INFO">Clicking link 'css=div.DataSetDirectoryTitle &gt; div &gt; h3 &gt; a'.</msg>
+<status status="PASS" endtime="20161212 19:10:41.999" starttime="20161212 19:10:41.865"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:10:41.999" starttime="20161212 19:10:35.688"></status>
+</kw>
+<kw name="Select File DataSource" library="DatasetPages">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20161212 19:10:45.001" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20161212 19:10:45.001" starttime="20161212 19:10:42.000"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>xpath=/html/body/div[3]/div/div[1]/div/div/div[1]/div/div[1]/div/ul/li[1]/span/span/a</arg>
+</arguments>
+<msg timestamp="20161212 19:10:45.002" level="INFO">Clicking link 'xpath=/html/body/div[3]/div/div[1]/div/div/div[1]/div/div[1]/div/ul/li[1]/span/span/a'.</msg>
+<status status="PASS" endtime="20161212 19:10:45.163" starttime="20161212 19:10:45.001"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=div.content-box &gt; div &gt; table &gt; tbody &gt; tr:nth-child(1)</arg>
+</arguments>
+<msg timestamp="20161212 19:10:45.163" level="INFO">Clicking element 'css=div.content-box &gt; div &gt; table &gt; tbody &gt; tr:nth-child(1)'.</msg>
+<status status="PASS" endtime="20161212 19:10:45.490" starttime="20161212 19:10:45.163"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=body &gt; div:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(3) &gt; div &gt; a:nth-child(2)</arg>
+</arguments>
+<msg timestamp="20161212 19:10:45.491" level="INFO">Clicking link 'css=body &gt; div:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(3) &gt; div &gt; a:nth-child(2)'.</msg>
+<status status="PASS" endtime="20161212 19:10:45.571" starttime="20161212 19:10:45.491"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:10:45.571" starttime="20161212 19:10:41.999"></status>
+</kw>
+<kw name="Show Preview of File DataSource Columns" library="DatasetPages">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table</arg>
+<arg>20</arg>
+<arg>无法预览数据</arg>
+</arguments>
+<status status="PASS" endtime="20161212 19:10:47.812" starttime="20161212 19:10:45.572"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:10:47.812" starttime="20161212 19:10:45.571"></status>
+</kw>
+<kw name="Modify Alias of Columns" library="DatasetPages">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(10) &gt; div:nth-child(2) &gt; input[type="text"]</arg>
+<arg>FormatedDate</arg>
+</arguments>
+<msg timestamp="20161212 19:10:47.813" level="INFO">Typing text 'FormatedDate' into text field 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(10) &gt; div:nth-child(2) &gt; input[type="text"]'</msg>
+<status status="PASS" endtime="20161212 19:10:51.194" starttime="20161212 19:10:47.813"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:10:51.194" starttime="20161212 19:10:47.812"></status>
+</kw>
+<kw name="Modify DataType of Columns" library="DatasetPages">
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(9) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Datetime</arg>
+</arguments>
+<msg timestamp="20161212 19:10:51.195" level="INFO">Selecting value(s) 'Datetime' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(9) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:51.807" starttime="20161212 19:10:51.195"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(10) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Datetime</arg>
+</arguments>
+<msg timestamp="20161212 19:10:51.808" level="INFO">Selecting value(s) 'Datetime' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(10) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:52.626" starttime="20161212 19:10:51.807"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(7) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Numeric</arg>
+</arguments>
+<msg timestamp="20161212 19:10:52.627" level="INFO">Selecting value(s) 'Numeric' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(7) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:53.462" starttime="20161212 19:10:52.626"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(8) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Numeric</arg>
+</arguments>
+<msg timestamp="20161212 19:10:53.463" level="INFO">Selecting value(s) 'Numeric' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(8) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:54.277" starttime="20161212 19:10:53.462"></status>
+</kw>
+<kw name="Focus" library="Selenium2Library">
+<doc>Sets focus to element identified by `locator`.</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(14) &gt; div:nth-child(2) &gt; select</arg>
+</arguments>
+<status status="PASS" endtime="20161212 19:10:54.798" starttime="20161212 19:10:54.277"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(14) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Numeric</arg>
+</arguments>
+<msg timestamp="20161212 19:10:54.799" level="INFO">Selecting value(s) 'Numeric' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(14) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:55.135" starttime="20161212 19:10:54.799"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20161212 19:10:57.135" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161212 19:10:57.135" starttime="20161212 19:10:55.135"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(15) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Numeric</arg>
+</arguments>
+<msg timestamp="20161212 19:10:57.136" level="INFO">Selecting value(s) 'Numeric' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(15) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:57.950" starttime="20161212 19:10:57.136"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(16) &gt; div:nth-child(2) &gt; select</arg>
+<arg>Numeric</arg>
+</arguments>
+<msg timestamp="20161212 19:10:57.951" level="INFO">Selecting value(s) 'Numeric' from list 'css=div.dataset-preview.jade &gt; div &gt; table &gt; thead &gt; tr &gt; th:nth-child(16) &gt; div:nth-child(2) &gt; select'.</msg>
+<status status="PASS" endtime="20161212 19:10:58.777" starttime="20161212 19:10:57.950"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>css=body &gt; div:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; form &gt; div &gt; div:nth-child(3) &gt; div &gt; button</arg>
+</arguments>
+<msg timestamp="20161212 19:10:58.778" level="INFO">Clicking button 'css=body &gt; div:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; form &gt; div &gt; div:nth-child(3) &gt; div &gt; button'.</msg>
+<status status="PASS" endtime="20161212 19:10:59.384" starttime="20161212 19:10:58.778"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:10:59.384" starttime="20161212 19:10:51.195"></status>
+</kw>
+<kw name="Formate Datetime Column" library="DatasetPages">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>name=name</arg>
+<arg>20</arg>
+</arguments>
+<status status="PASS" endtime="20161212 19:10:59.447" starttime="20161212 19:10:59.384"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/div[3]/div/div[1]/div/div/div[1]/div/div[1]/div[2]/div/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20161212 19:10:59.447" level="INFO">Clicking element 'xpath=/html/body/div[3]/div/div[1]/div/div/div[1]/div/div[1]/div[2]/div/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20161212 19:10:59.527" starttime="20161212 19:10:59.447"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; div &gt; i</arg>
+</arguments>
+<msg timestamp="20161212 19:10:59.527" level="INFO">Clicking element 'css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; div &gt; i'.</msg>
+<status status="PASS" endtime="20161212 19:10:59.604" starttime="20161212 19:10:59.527"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; div &gt; span &gt; input</arg>
+<arg>yyyy/MM/dd HH:mm:ss</arg>
+</arguments>
+<msg timestamp="20161212 19:10:59.604" level="INFO">Typing text 'yyyy/MM/dd HH:mm:ss' into text field 'css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr &gt; td:nth-child(4) &gt; div &gt; span &gt; input'</msg>
+<status status="PASS" endtime="20161212 19:11:01.602" starttime="20161212 19:10:59.604"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr:nth-child(2) &gt; td:nth-child(4) &gt; div &gt; i</arg>
+</arguments>
+<msg timestamp="20161212 19:11:01.603" level="INFO">Clicking element 'css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr:nth-child(2) &gt; td:nth-child(4) &gt; div &gt; i'.</msg>
+<status status="PASS" endtime="20161212 19:11:01.910" starttime="20161212 19:11:01.602"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr:nth-child(2) &gt; td:nth-child(4) &gt; div &gt; span &gt; input</arg>
+<arg>yyyy/MM/dd HH:mm:ss</arg>
+</arguments>
+<msg timestamp="20161212 19:11:01.910" level="INFO">Typing text 'yyyy/MM/dd HH:mm:ss' into text field 'css=div.data-set-content &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; div &gt; table &gt; tbody &gt; tr:nth-child(2) &gt; td:nth-child(4) &gt; div &gt; span &gt; input'</msg>
+<status status="PASS" endtime="20161212 19:11:04.393" starttime="20161212 19:11:01.910"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:11:04.393" starttime="20161212 19:10:59.384"></status>
+</kw>
+<kw name="Finish Creating the New File DataSet" library="DatasetPages">
+<arguments>
+<arg>${dataset_name}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=name</arg>
+<arg>${dataset_name}</arg>
+</arguments>
+<msg timestamp="20161212 19:11:04.394" level="INFO">Typing text 'MyNewDataset' into text field 'name=name'</msg>
+<status status="PASS" endtime="20161212 19:11:04.616" starttime="20161212 19:11:04.394"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=body &gt; div:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(2) &gt; div &gt; a:nth-child(3)</arg>
+</arguments>
+<msg timestamp="20161212 19:11:04.617" level="INFO">Clicking link 'css=body &gt; div:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(2) &gt; div &gt; a:nth-child(3)'.</msg>
+<status status="PASS" endtime="20161212 19:11:04.707" starttime="20161212 19:11:04.616"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:11:04.707" starttime="20161212 19:11:04.393"></status>
+</kw>
+<status status="PASS" endtime="20161212 19:11:04.708" starttime="20161212 19:10:35.688"></status>
+</kw>
+<kw name="Should See the New Created File Dataset" library="TestResults">
+<arguments>
+<arg>MyNewDataset</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[1]/div[1]/span[1]</arg>
+<arg>20</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161212 19:11:08.791" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161212 19:11:08.791" starttime="20161212 19:11:08.475"></status>
+</kw>
+<msg timestamp="20161212 19:11:08.796" level="FAIL">StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=54.0.2840.98)
+  (Driver info: chromedriver=2.25.426935 (820a95b0b81d33e42712f9198c215f703412e1a1),platform=Mac OS X 10.10.3 x86_64)
+</msg>
+<status status="FAIL" endtime="20161212 19:11:08.796" starttime="20161212 19:11:04.709"></status>
+</kw>
+<status status="FAIL" endtime="20161212 19:11:08.797" starttime="20161212 19:11:04.708"></status>
+</kw>
+<doc>Include the following steps:
+1. Create new file dataset
+2. Rename the alias of the fourth column
+3. Link to datasource from dataset</doc>
+<status status="FAIL" endtime="20161212 19:11:08.797" critical="yes" starttime="20161212 19:10:30.421">StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=54.0.2840.98)
+  (Driver info: chromedriver=2.25.426935 (820a95b0b81d33e42712f9198c215f703412e1a1),platform=Mac OS X 10.10.3 x86_64)
+</status>
+</test>
+<status status="FAIL" endtime="20161212 19:11:08.799" starttime="20161212 19:10:30.255"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="TestDataSet" pass="0">TestDataSet</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

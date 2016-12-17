@@ -1,0 +1,9 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Select File Datasource
+    Click Link    xpath=//div[3]/div/div[1]/div/div/div[1]/div/div[1]/div/ul/li[1]/span/span/a
+    Wait Until Element Is Visible    css=div.content-box > div > table
+    Click Element    xpath=//div[2]/div/table/tbody/tr[1]    #The first datasource in the first directory
+    Click Link    xpath=//div[3]/div/a[2]    #next step
