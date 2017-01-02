@@ -1,0 +1,4 @@
+*** Settings ***
+Resource          ../../pages/report-pages/ReportsListPage.txt
+Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
+Resource          ../../pages/report-pages/ReportDetailsPage.txt
