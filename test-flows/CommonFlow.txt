@@ -1,0 +1,13 @@
+*** Settings ***
+Resource          ../pages/LoginPage.txt
+
+*** Keywords ***
+Open Browser and Login Mort Web
+    [Arguments]    ${url}    ${user_name}    ${user_pwd}
+    Open Browser    ${url}    chrome
+    User Login to Mort Web    ${user_name}    ${user_pwd}
+
+Capture Screenshot of Current Page
+    [Arguments]    ${path}    ${screenshot_name}
+    Set Screenshot Directory    ${path}
+    Capture Page Screenshot    ${screenshot_name}

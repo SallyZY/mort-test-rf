@@ -1,18 +1,18 @@
 *** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
 Resource          ../test-flows/DataSetFlow.txt
 Resource          ../pages/LoginPage.txt
 Resource          ../test-results/TestResults.txt
+Resource          ../test-flows/CommonFlow.txt
 
 *** Test Cases ***
 TestFileDataset
-    [Documentation]    Include the following steps:
-    ...    1. Create new file dataset
-    ...    2. Rename the alias of column
-    ...    3. Check the import record
-    ...    4. Check the preview data
-    ...    5. Link to datasource
-    Open Browser    http://localhost:3000    chrome
-    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    [Documentation]    测试步骤如下：
+    ...    1. 创建一个新的文件数据集
+    ...    2. 重命名数据集第一个字段
+    ...    3. 查看导入记录
+    ...    4. 查看数据预览
+    ...    5. 查看数据源
     Create File Dataset    FileDataset
     Should See the New Created File Dataset    FileDataset
     Rename the Alias of Display Name    ModifiedColumnName
@@ -21,15 +21,12 @@ TestFileDataset
     Link to File Datasource from Dataset
 
 TestRDBDataset
-    [Documentation]    Include the following steps:
-    ...    1. Create new RDB dataset
-    ...    2. Rename the alias of column
-    ...    3. Check the import record
-    ...    4. Check the preview data
-    ...    5. Link to datasource
-    Open Browser    http://localhost:3000    chrome
-    Maximize Browser Window
-    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    [Documentation]    测试步骤如下：
+    ...    1. 创建一个新的关系数据集
+    ...    2. 重命名第一个字段
+    ...    3. 查看导入记录
+    ...    4. 查看数据预览
+    ...    5. 查看数据源
     Create MySQL Dataset    MySQLDataset
     Should See RDB Dataset Created    MySQLDataset
     Rename the Alias of Display Name    ModifiedColumnName

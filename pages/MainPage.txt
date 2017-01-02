@@ -11,6 +11,10 @@ Open Create Dataset Page
     Sleep    3
     Click Link    css=div.DataSetDirectoryTitle > div > h3 > a
 
+Open Create Report Page
+    Sleep    3
+    Click Link    css=div.DataSetDirectoryTitle > div > h3 > a
+
 Open User Management Page
     Sleep    3
     Click Link    css=div.header > ul.menu > li:nth-child(5) > a
@@ -22,3 +26,7 @@ Select Datasource Tab in Navigation Bar
 Select Dataset Tab in Navigation Bar
     Sleep    3
     Click Link    xpath=//ul[1]/li[2]/a    #click dataset tab
+
+Select Report Tab in Navigation Bar
+    Sleep    3
+    Click Link    xpath=//ul[1]/li[3]/a    #click report tab

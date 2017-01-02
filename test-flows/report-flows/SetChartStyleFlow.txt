@@ -1,0 +1,45 @@
+*** Settings ***
+Resource          ../../pages/report-pages/ReportsListPage.txt
+Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
+Resource          ../../pages/report-pages/ReportDetailsPage.txt
+Resource          ../../test-results/report-result/TestChartResult.txt
+Resource          ../../pages/report-pages/chart-setting-components/ChartStyleSettingComponent.txt
+
+*** Keywords ***
+Goto Report Edit Page
+    [Arguments]    ${report_index}
+    Select Chart from Reports List    ${report_index}
+    Click Edit Report Button
+
+Goto Chart Style Setting Panel
+    Goto Chart Setting Panel
+    Should See Dataset of Column Chart Expand
+
+Set Chart Title
+    [Arguments]    ${chart_title}
+    Click Chart Style Setting Icon
+    Set Title of Chart    ${chart_title}
+
+Set X Axis
+    [Arguments]    ${x_axis_item_index}
+    Open Title of X Axis    ${x_axis_item_index}
+
+Set Left Y Axis
+    [Arguments]    ${y_axis_item_index}    ${metric_alias_name}
+    Open Title of Left Y Axis    ${y_axis_item_index}
+    Set Alias of Left Y Axis    ${y_axis_item_index}    ${metric_alias_name}
+    Set Data Label of Left Y Axis    ${y_axis_item_index}
+
+Set Right Y Axis
+    [Arguments]    ${y_axis_item_index}    ${metric_alias_name}
+    Open Title of Right Y Axis    ${y_axis_item_index}
+    Set Alias of Right Y Axis    ${y_axis_item_index}    ${metric_alias_name}
+    Set Data Label of Right Y Axis    ${y_axis_item_index}
+
+Set Legend
+    [Arguments]    ${legend_item_index}
+    Set the Style of Legend    ${legend_item_index}
+
+Set Data Label
+    [Arguments]    ${data_label_item_index}
+    Set Data Label of Chart    ${data_label_item_index}

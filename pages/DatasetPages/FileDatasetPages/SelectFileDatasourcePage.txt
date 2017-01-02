@@ -3,7 +3,10 @@ Library           Selenium2Library
 
 *** Keywords ***
 Select File Datasource
-    Click Link    xpath=//div[3]/div/div[1]/div/div/div[1]/div/div[1]/div/ul/li[1]/span/span/a
-    Wait Until Element Is Visible    css=div.content-box > div > table
-    Click Element    xpath=//div[2]/div/table/tbody/tr[1]    #The first datasource in the first directory
+    #选择第一个数据源文件夹
+    Wait Until Element Is Visible    xpath=//div[3]/div/div[1]/div/div/div[1]/div/div[1]/div/ul/li[1]/span/span/div/a    20
+    Click Link    xpath=//div[3]/div/div[1]/div/div/div[1]/div/div[1]/div/ul/li[1]/span/span/div/a
+    Wait Until Element Is Visible    css=div.content-box > div > table    20
+    #选择File数据源(第一个)
+    Click Element    xpath=//div[2]/div/table/tbody/tr[1]
     Click Link    xpath=//div[3]/div/a[2]    #next step

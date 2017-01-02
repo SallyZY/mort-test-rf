@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../test-results/report-result/TestChartResult.txt
+
+*** Keywords ***
+Create Column Chart
+    Select Column Chart Type
+    Should See Column Chart Binding Items Displayed    #BindingItem是否显示
+    Should See the Empty Chart Created    #空白视图是否创建成功
+    Drag 开户渠道 Field to X Axis

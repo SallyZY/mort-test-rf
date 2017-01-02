@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Should See Column Chart Binding Items Displayed
+    WaitUntil Element Is Visible    css=div.Bindings    20    “无法显示BindingItem区域”
+    Element Text Should Be    xpath=//div[1]/p    X轴    “找不到X轴BindingItem”
+    Element Text Should Be    xpath=//div[2]/p    指标    "找不到指标BindingItem”
+    Element Text Should Be    xpath=//div[3]/p    图例    “找不到图例BindingItem”
+
+Should See the Empty Chart Created
+    WaitUntil Element Is Visible    xpath=//div[2]/div/img    20    “空白视图创建不成功”
+
+Should See Dataset of Column Chart Expand
+    Page Should Contain    流失资产

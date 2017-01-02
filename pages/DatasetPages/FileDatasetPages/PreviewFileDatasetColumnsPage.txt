@@ -3,7 +3,7 @@ Library           Selenium2Library
 
 *** Keywords ***
 Modify Alias of File Dataset Columns
-    Wait Until Element Is Visible    xpath=//form/div/div[2]/div/table/tbody    20
+    Wait Until Element Is Visible    xpath=//form/div/div[2]/div/table/thead/tr/th[1]/div[2]/input    20
     Input Text    xpath=//form/div/div[2]/div/table/thead/tr/th[1]/div[2]/input    CustomerID
 
 Modify DataType of File Dataset Columns

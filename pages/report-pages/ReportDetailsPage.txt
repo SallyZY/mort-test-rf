@@ -1,0 +1,9 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Click Edit Report Button
+    Sleep    5
+    Click Element    xpath=//div/div/div[1]/div/div/div[3]/div/div[1]/div[2]
+    Wait Until Element Is Visible    css=div.ReportWorkplace    20
+    Sleep    5

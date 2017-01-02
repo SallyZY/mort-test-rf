@@ -1,7 +1,7 @@
 *** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
 Resource          ../pages/LoginPage.txt
+Resource          ../test-flows/CommonFlow.txt
 
 *** Test Cases ***
 TestDirectory
-    Open Browser    http://localhost:3000    chrome
-    User Login to Mort Web    zhangyi@bigeyedata.com    password

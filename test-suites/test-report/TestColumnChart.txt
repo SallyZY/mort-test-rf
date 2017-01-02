@@ -1,0 +1,22 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
+Resource          ../../pages/MainPage.txt
+Resource          ../../test-flows/report-flows/CreateChartFlow.txt
+Resource          ../../pages/LoginPage.txt
+Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
+Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../../test-flows/report-flows/SetChartStyleFlow.txt
+Resource          ../../test-flows/CommonFlow.txt
+
+*** Test Cases ***
+TestCreateColumnChart
+    Select Dataset Tab in Navigation Bar
+    Select the First Directory
+    Select File Dataset
+    Create a New Report From File Dataset
+    Create Column Chart
+
+TestDrag
+    Open Browser    file:///Users/yingzhang/Desktop/DragElement.htm    Chrome
+    Sleep    3
+    Drag And Drop    id=makeMeDraggable    id=makeMeDroppable

@@ -1,0 +1,52 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
+Resource          ../../pages/MainPage.txt
+Resource          ../../test-flows/report-flows/CreateChartFlow.txt
+Resource          ../../pages/LoginPage.txt
+Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
+Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../../test-flows/report-flows/SetChartStyleFlow.txt
+Resource          ../../test-flows/CommonFlow.txt
+
+*** Test Cases ***
+TestSetColumnChartStyle
+    [Documentation]    测试步骤如下：
+    ...    1.设置视图标题
+    ...    2.打开X轴标题
+    ...    3.打开Y轴标题；并设置指标别名；设置Y轴数据标签（小数点位数为“1”，打开千分位分隔符）
+    ...    4.设置图例显示位置为上部居中
+    ...    5.设置数据标签(设置数据标签显示位置为“内部居中”，单位为“千”，小数点位数为“2”)
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    1
+    Goto Chart Style Setting Panel
+    Set Chart Title    柱状图
+    Set X Axis    2
+    Set Left Y Axis    3    平均流失资产
+    Set Legend    4
+    Set Data Label    6
+    Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetColumnChartStyle.png
+
+TestSetPieChartStyle
+    [Documentation]    测试步骤如下：
+    ...    1.设置视图标题
+    ...    2.设置图例显示位置为上部居中
+    ...    3.设置数据标签(设置数据标签显示位置为“内部居中”，单位为“千”，小数点位数为“2”)
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    3
+    Goto Chart Style Setting Panel
+    Set Chart Title    饼图
+    Set Legend    2
+    Set Data Label    4
+    Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetPieChartStyle.png
+
+TestSetDoubleLineChartStyle
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    2
+    Goto Chart Style Setting Panel
+    Set Chart Title    双指标折线图
+    Set X Axis    2
+    Set Left Y Axis    3    平均流失股基交易量
+    Set Right Y Axis    4    流失资产总和
+    Set Legend    5
+    Set Data Label    7
+    Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetDoubleLineChartStyle.png

@@ -3,7 +3,8 @@ Library           Selenium2Library
 
 *** Keywords ***
 Select the First DataSource Directory
-    Click Element    xpath=//ul/li[1]/span/span/a/div/span
+    Wait Until Element Is Visible    xpath=//ul/li[1]/span/span/div/a/div/span    20    “无法找到文件目录”
+    Click Element    xpath=//ul/li[1]/span/span/div/a/div/span
 
 Rename the Directory
     [Arguments]    ${directory_name}
@@ -20,3 +21,7 @@ Create a New Directory
     Input Text    css=body > div:nth-child(6) > div > div > div.directory-name > input[type="text"]    ${directory_name}
     Click Link    css=body > div:nth-child(6) > div > div > div:nth-child(4) > a
     Wait Until Element Contains    css=div.directory-container    ${directory_name}
+
+Select the First Directory
+    Wait Until Element Is Visible    css=div.directory-container    20    ”无法显示目录区域“
+    Click Element    xpath=//ul/li[1]/span/span/a/div/span

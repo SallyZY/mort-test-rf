@@ -1,12 +1,13 @@
 *** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
 Resource          ../pages/LoginPage.txt
 Resource          ../test-flows/DataSourceFlow.txt
 Resource          ../test-results/TestResults.txt
 Resource          ../test-flows/DirectoryFlow.txt
+Resource          ../test-flows/CommonFlow.txt
 
 *** Test Cases ***
 TestCreateMySQLDatasource
-    Open Browser    http://localhost:3000    chrome
-    User Login to Mort Web    zhangyi@bigeyedata.com    password
+    [Documentation]    创建MySQL数据源
     Create MySQL Datasource    MySQLDatasource
     Should See the New Created RDB Datasource    MySQLDatasource

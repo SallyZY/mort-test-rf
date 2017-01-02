@@ -1,0 +1,9 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Select Chart from Reports List
+    [Arguments]    ${report_index}
+    Wait Until Element Is Visible    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[2]    20    “无法显示报表列表”
+    Click Element    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[2]/div[3]/div/div[${report_index}]/div
+    Wait Until Element Is Visible    css=div.reportsContent    20    “无法显示报表预览‘
