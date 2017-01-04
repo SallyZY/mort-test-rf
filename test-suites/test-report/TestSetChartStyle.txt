@@ -6,6 +6,7 @@ Resource          ../../pages/LoginPage.txt
 Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
 Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
 Resource          ../../test-flows/report-flows/SetChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/SetKPIChartStyleFlow.txt
 Resource          ../../test-flows/CommonFlow.txt
 
 *** Test Cases ***
@@ -95,3 +96,20 @@ TestSetStyleOfAreaStackChart
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfAreaStackChart.png
 
 TestSetStyleOfKPIChart
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    4
+    Goto Chart Style Setting Panel
+    Set KPI Chart Title    KPI Chart
+    #设置第二个指标
+    Expand Metric Setting Item By Index    2
+    Set KPI Metric TItle    2    最大日期
+    Set KPI Metric DataLabel    2    none    'FALSE'
+    #设置第四个指标
+    Expand Metric Setting Item By Index    4
+    Set KPI Metric TItle    4    价格总和
+    Set KPI Metric DataLabel    4    tenThousand    'FALSE'
+    #设置第六个指标
+    Expand Metric Setting Item By Index    6
+    Set KPI Metric TItle    6    平均价格
+    Set KPI Metric DataLabel    6    none    'TRUE'
+    Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfKPIChart.png

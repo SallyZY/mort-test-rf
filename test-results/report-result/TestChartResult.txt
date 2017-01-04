@@ -12,4 +12,8 @@ Should See the Empty Chart Created
     WaitUntil Element Is Visible    xpath=//div[2]/div/img    20    “空白视图创建不成功”
 
 Should See Dataset of Column Chart Expand
-    Page Should Contain    流失资产
+    Page Should Contain    FileDataset
+
+Should See Decimal Point of KPI Data Label Set to 2 by Default
+    [Arguments]    ${item_index}
+    List Selection Should Be    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    2

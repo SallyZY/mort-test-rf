@@ -1,0 +1,58 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../ReportWorkSpacePage.txt
+Resource          ../../../test-results/report-result/TestChartResult.txt
+
+*** Keywords ***
+Set Title of KPI Chart
+    [Arguments]    ${chart_title}
+    Wait Style Setting Panel Display
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(1) > span:nth-child(3) > span > i
+    Click Element    xpath=//div[2]/div[2]/div/div/div[1]/div[1]
+    # 设置视图标题
+    Input Text    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2) > input    ${chart_title}
+    Sleep    2
+    # 设置标题居中
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > div > input[type="radio"]:nth-child(3)
+    Sleep    2
+    # 设置标题字体大小
+    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    14
+    Sleep    2
+
+Expand Metric Setting Item By Index
+    [Arguments]    ${item_index}
+    Wait Style Setting Panel Display
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(1)
+
+Set Title of KPI Metric
+    [Arguments]    ${item_index}    ${metric_title}
+    # 展开指标标题设置项
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)
+    # 设置视图标题
+    Input Text    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2) > input    ${metric_title}
+    Sleep    2
+    # 设置标题居左
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > div > input[type="radio"]:nth-child(1)
+    Sleep    2
+    # 设置标题字体大小为16
+    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    16
+    S leep    2
+
+Set Data Label of KPI Metric
+    [Arguments]    ${item_index}    ${dataLabel_unit}    ${is_set_dieTausendstel}
+    # 展开指标数据标签设置项
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)
+    # 设置指标数据标签居左
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2) > div > input[type="radio"]:nth-child(1)
+    # 设置指标数据标签字体大小为16
+    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > span:nth-child(2) > select    16
+    # 指标数据标签小数点默认设置为2位
+    Should See Decimal Point of KPI Data Label Set to 2 by Default    ${item_index}
+    # 设置指标数据标签单位    #none/percent/thousand/tenThousand/million/oneHundredMillion
+    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${item_index})> div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > span:nth-child(2) > select    ${dataLabel_unit}
+    # 是否打开千分位分隔符
+    Run Keyword If    ${is_set_dieTausendstel}=='TRUE'    Set Data Label Die Tausendstel of KPI Metric    ${item_index}
+
+Set Data Label Die Tausendstel of KPI Metric
+    [Arguments]    ${item_index}
+    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(6) > span:nth-child(2) > span > i

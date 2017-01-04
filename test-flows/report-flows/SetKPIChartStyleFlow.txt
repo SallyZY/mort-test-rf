@@ -2,3 +2,19 @@
 Resource          ../../pages/report-pages/ReportsListPage.txt
 Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
 Resource          ../../pages/report-pages/ReportDetailsPage.txt
+Resource          ../../test-results/report-result/TestChartResult.txt
+Resource          ../../pages/report-pages/chart-setting-components/KPIChartStyleSettingComponent.txt
+
+*** Keywords ***
+Set KPI Chart Title
+    [Arguments]    ${chart_title}
+    Click Chart Style Setting Icon
+    Set Title of KPI Chart    ${chart_title}
+
+Set KPI Metric TItle
+    [Arguments]    ${item_index}    ${metric_title}
+    Set Title of KPI Metric    ${item_index}    ${metric_title}
+
+Set KPI Metric DataLabel
+    [Arguments]    ${item_index}    ${dataLabel_unit}    ${is_set_dieTausendstel}
+    Set Data Label of KPI Metric    ${item_index}    ${dataLabel_unit}    ${is_set_dieTausendstel}
