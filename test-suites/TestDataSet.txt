@@ -13,9 +13,9 @@ TestFileDataset
     ...    3. 查看导入记录
     ...    4. 查看数据预览
     ...    5. 查看数据源
-    Create File Dataset    FileDataset
-    Should See the New Created File Dataset    FileDataset
-    Rename the Alias of Display Name    ModifiedColumnName
+    Create File Dataset    TestFileDataset
+    Should See the New Created File Dataset    TestFileDataset
+    Rename the Alias of Display Name    测试日期
     Sleep    3
     Check Dataset Details
     Link to File Datasource from Dataset
@@ -27,9 +27,9 @@ TestRDBDataset
     ...    3. 查看导入记录
     ...    4. 查看数据预览
     ...    5. 查看数据源
-    Create MySQL Dataset    MySQLDataset
-    Should See RDB Dataset Created    MySQLDataset
-    Rename the Alias of Display Name    ModifiedColumnName
+    Create MySQL Dataset    TestMySQLDataset
+    Should See RDB Dataset Created    TestMySQLDataset
+    Rename the Alias of Display Name    ID
     Sleep    3
     Check Dataset Details
     Link to RDB Datasource from Dataset

@@ -10,9 +10,9 @@ Should See the New Created RDB Datasource
 Should See the New Created File Dataset
     [Arguments]    ${dataset_name}
     Wait Until Element Is Visible    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[1]/div[1]/span[1]    20
-    Element Text Should Be    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[1]/div[1]/span[1]    ${dataset_name}
+    Element Should Contain    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[1]/div[1]/span[1]    ${dataset_name}
 
 Should See RDB Dataset Created
     [Arguments]    ${dataset_name}
     Wait Until Element Is Visible    xpath=//div[3]/div/div[1]/div[1]/span[1]    20
-    Element Text Should Be    xpath=//div[3]/div/div[1]/div[1]/span[1]    ${dataset_name}
+    Element Should Contain    xpath=//div[3]/div/div[1]/div[1]/span[1]    ${dataset_name}

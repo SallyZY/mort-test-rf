@@ -8,6 +8,7 @@ Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
 Resource          ../../test-flows/report-flows/SetChartStyleFlow.txt
 Resource          ../../test-flows/report-flows/SetKPIChartStyleFlow.txt
 Resource          ../../test-flows/CommonFlow.txt
+Resource          ../../pages/report-pages/ColorPickerComponent.txt
 
 *** Test Cases ***
 TestSetStyleOfColumnChart
@@ -113,3 +114,20 @@ TestSetStyleOfKPIChart
     Set KPI Metric TItle    6    平均价格
     Set KPI Metric DataLabel    6    none    'TRUE'
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfKPIChart.png
+
+TestSetStyleOfPivotTable
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    7
+    Goto Chart Style Setting Panel
+    Set KPI Chart Title    透视图
+
+Test
+    ${COLORPICKER_CSSPATH}    Set Variable    123
+    log    ${COLORPICKER_CSSPATH}
+    ${COLORPICKER_CSSPATH}    Set Variable    456
+    log    ${COLORPICKER_CSSPATH}
+
+Test1
+    ${FontColor_ChartTitle_CSSPath}    Set Variable    body > div:nth-child(6) > div > div > div > div:nth-child(2) > div
+    ${FontColor_ChartTitle_CSSPath}    Set Variable    ${FontColor_ChartTitle_CSSPath} >testlink
+    log    ${FontColor_ChartTitle_CSSPath}

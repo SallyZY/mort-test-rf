@@ -4,9 +4,9 @@ Library           Selenium2Library
 *** Keywords ***
 Config the Connection Parameters of RDB Datasource
     [Arguments]    ${datasource_name}
-    Input Text    name=name    ${datasource_name}
-    Input Text    name=options.host    127.0.0.1
-    Input Text    name=options.port    3306
-    Input Text    name=options.username    root
-    Input Text    name=options.database    customerdata_dev
-    Click Button    css=div.buttons.clearfix > button
+    Input Text    css=div.fields > dl > dd:nth-child(2) > input[type="text"]    ${datasource_name}
+    Input Text    css=div.fields > dl > div.nameInput > dd:nth-child(1) > input[type="text"]:nth-child(2)    127.0.0.1
+    Input Text    css=div.fields > dl > div.nameInput > dd:nth-child(2) > input[type="number"]:nth-child(2)    3306
+    Input Text    css=div.fields > dl > div.nameInput > dd:nth-child(3) > input[type="text"]:nth-child(2)    root
+    Input Text    css=div.fields > dl > div.nameInput > dd:nth-child(5) > input[type="text"]:nth-child(2)    customerdata_dev
+    Click Element    css=div.buttons.clearfix > a:nth-child(4)

@@ -9,5 +9,5 @@ Resource          ../test-flows/CommonFlow.txt
 *** Test Cases ***
 TestCreateMySQLDatasource
     [Documentation]    创建MySQL数据源
-    Create MySQL Datasource    MySQLDatasource
-    Should See the New Created RDB Datasource    MySQLDatasource
+    Create MySQL Datasource    TestMySQLDatasource
+    Should See the New Created RDB Datasource    TestMySQLDatasource
