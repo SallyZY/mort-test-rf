@@ -1,0 +1,31 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Select Virtual Field Menu Item
+    [Arguments]    ${dataset_index}
+    Click Virtual Field Menu Icon    ${dataset_index}
+    Click Element    css=body > div:nth-child(6) > div > div > ul > li:nth-child(1)
+    Wait Until Element Is Visible    css=div.code-preview    20    找不到虚拟字段对话框
+
+Select Virtul Metric Menu Item
+    [Arguments]    ${dataset_index}
+    Click Virtual Field Menu Icon    ${dataset_index}
+    Click Element    css=body > div:nth-child(6) > div > div > ul > li:nth-child(3)
+    Wait Until Element Is Visible    css=div.code-preview    20    找不到虚拟指标对话框
+
+Click Virtual Field Menu Icon
+    [Arguments]    ${dataset_index}
+    Mouse Over    css=div.MainContent > div > div:nth-child(2) > div.PanelContent > div.dataSetCollection.beautiful-scrollbar > ul:nth-child(${dataset_index}) > div.data-set-item.selected > div
+    Sleep    1
+    Click Element    css=div.DefaultLayout > div.MainContent > div > div:nth-child(2) > div.PanelContent > div.dataSetCollection.beautiful-scrollbar > ul:nth-child(${dataset_index}) > div.data-set-item.selected > i
+    Sleep    1
+
+Select Text Type of Virtual Field
+    Click Element    css=div.types > div > label:nth-child(2) > span.ant-radio > input
+
+Select Numeric Type of Virtual Field
+    Click Element    css=div.types > div > label:nth-child(1) > span.ant-radio > input
+
+Select Date Type of Virtual Field
+    Click Element    css=div.types > div > label:nth-child(3) > span.ant-radio > input

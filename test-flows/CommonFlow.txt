@@ -11,3 +11,10 @@ Capture Screenshot of Current Page
     [Arguments]    ${path}    ${screenshot_name}
     Set Screenshot Directory    ${path}
     Capture Page Screenshot    ${screenshot_name}
+
+Create a New Report by Specified Dataset
+    [Arguments]    ${dic_index}    ${dataset_index}
+    Select Dataset Tab in Navigation Bar
+    Select Dataset Directory by Index    ${dic_index}
+    Select Dataset by Index    ${dataset_index}
+    Go to New Report Page From Dataset

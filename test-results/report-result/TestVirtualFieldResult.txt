@@ -1,0 +1,7 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Should See Virtual Field Created Successfully
+    [Arguments]    ${dataset_index}    ${vf_name}
+    Wait Until Element Contains    css=div.PanelContent > div.dataSetCollection.beautiful-scrollbar > ul:nth-child(${dataset_index}) > div:nth-child(2)    ${vf_name}    20

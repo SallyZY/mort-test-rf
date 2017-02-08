@@ -28,6 +28,10 @@ Select File Dataset
     Click Element    xpath=//div[2]/div[3]/div/div[1]/div/div[1]
     Wait Until Element Is Visible    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[2]/div    20
 
-Create a New Report From File Dataset
-    Click Element    xpath=//div[1]/div/div/div[3]/div/div[1]/div[2]
+Go to New Report Page From Dataset
+    Click Element    css=div.MainContent > div > div > div:nth-child(3) > div > div.data-set-header > div:nth-child(2)
     Wait Until Element Is Visible    css=div.ReportWorkplace    20
+
+Select Dataset by Index
+    [Arguments]    ${dataset_index}
+    Click Element    css=div.MainContent > div > div > div:nth-child(2) > div.DataSetsList.beautiful-scrollbar > div > div:nth-child(${dataset_index})

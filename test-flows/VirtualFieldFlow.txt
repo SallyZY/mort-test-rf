@@ -1,0 +1,29 @@
+*** Settings ***
+Resource          ../pages/MainPage.txt
+Resource          ../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../pages/DirectoryPages/FileDirectoryPage.txt
+Resource          ../pages/DatasetPages/FileDatasetPages/SelectFileDatasourcePage.txt
+Resource          ../pages/virtual-field-pages/VirtualFieldPage.txt
+
+*** Keywords ***
+Create Text Virtual Field
+    [Arguments]    ${field_name}    ${text_function}    ${original_field_type}
+    #选择文本类型
+    Select Text Type of Virtual Field
+    # 选择文本函数
+    Select From List By Label    css=div.fields > select:nth-child(5)    ${text_function}
+    # 选择文本字段
+    Run Keyword If    "${original_field_type}"=='Text'    Select From List By Label    css=div.fields > select:nth-child(2)    ${field_name}
+    ...    ELSE IF    "${original_field_type}"=='Datetime'    Select From List By Label    css=div.fields > select:nth-child(3)    ${field_name}
+    # 语法验证
+    Click Element    css=div.code-preview > div.code.border-box > a
+    Wait Until Element Is Visible    css=div.code-preview > div.preview.border-box.beautiful-scrollbar > table > tbody > tr:nth-child(1)    20    #没有显示预览结果
+    Sleep    2
+    # 虚拟字段名称
+    Input Text    css=div.name-type > div.name > input[type="text"]    VF_${text_function}_${field_name}
+    # 点击创建按钮
+    Click Button    css=div.status-btns > div.btns.clearfix > button
+
+Open Virtual Field Page
+    [Arguments]    ${dataset_index}
+    Select Virtual Field Menu Item    ${dataset_index}

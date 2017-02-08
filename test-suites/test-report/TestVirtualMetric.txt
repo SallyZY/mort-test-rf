@@ -1,0 +1,9 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
+Resource          ../../pages/MainPage.txt
+Resource          ../../pages/LoginPage.txt
+Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
+Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../../test-flows/CommonFlow.txt
+
+*** Test Cases ***
