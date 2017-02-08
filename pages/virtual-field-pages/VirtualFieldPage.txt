@@ -21,11 +21,28 @@ Click Virtual Field Menu Icon
     Click Element    css=div.DefaultLayout > div.MainContent > div > div:nth-child(2) > div.PanelContent > div.dataSetCollection.beautiful-scrollbar > ul:nth-child(${dataset_index}) > div.data-set-item.selected > i
     Sleep    1
 
-Select Text Type of Virtual Field
+Select Text Type for Virtual Field
     Click Element    css=div.types > div > label:nth-child(2) > span.ant-radio > input
 
-Select Numeric Type of Virtual Field
+Select Numeric Type for Virtual Field
     Click Element    css=div.types > div > label:nth-child(1) > span.ant-radio > input
 
-Select Date Type of Virtual Field
+Select Date Type for Virtual Field
     Click Element    css=div.types > div > label:nth-child(3) > span.ant-radio > input
+
+Click Create Virtual Field Button
+    Click Button    css=div.status-btns > div.btns.clearfix > button
+
+Set Expression and Name for Text Virtual Field
+    [Arguments]    ${field_name}    ${text_function}    ${original_field_type}
+    # 选择文本函数
+    Select From List By Label    css=div.fields > select:nth-child(5)    ${text_function}
+    # 选择文本字段
+    Run Keyword If    "${original_field_type}"=='Text'    Select From List By Label    css=div.fields > select:nth-child(2)    ${field_name}
+    ...    ELSE IF    "${original_field_type}"=='Datetime'    Select From List By Label    css=div.fields > select:nth-child(3)    ${field_name}
+    # 语法验证
+    Click Element    css=div.code-preview > div.code.border-box > a
+    Wait Until Element Is Visible    css=div.code-preview > div.preview.border-box.beautiful-scrollbar > table > tbody > tr:nth-child(1)    20    #没有显示预览结果
+    Sleep    2
+    # 虚拟字段名称
+    Input Text    css=div.name-type > div.name > input[type="text"]    VF_${text_function}_${field_name}
