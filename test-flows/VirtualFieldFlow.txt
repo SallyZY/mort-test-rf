@@ -6,14 +6,26 @@ Resource          ../pages/DatasetPages/FileDatasetPages/SelectFileDatasourcePag
 Resource          ../pages/virtual-field-pages/VirtualFieldPage.txt
 
 *** Keywords ***
-Create Text Virtual Field
-    [Arguments]    ${field_name}    ${text_function}    ${original_field_type}
-    #选择文本类型
-    Select Text Type for Virtual Field
-    #设置虚拟字段表达式和名称
-    Set Expression and Name for Text Virtual Field    ${field_name}    ${text_function}    ${original_field_type}
-    Click Create Virtual Field Button
-
 Open Virtual Field Page
     [Arguments]    ${dataset_index}
     Select Virtual Field Menu Item    ${dataset_index}
+
+Create Text Virtual Field
+    [Arguments]    ${field_name}    ${vf_function}    ${original_field_type}
+    #选择文本类型
+    Select Text Type for Virtual Field
+    #设置虚拟字段表达式
+    Set Expression for Text Virtual Field    ${field_name}    ${vf_function}    ${original_field_type}
+    #设置虚拟字段名称
+    Set Name for Virtual Field    ${field_name}    ${vf_function}
+    Click Create Virtual Field Button
+
+Create Numeric Virtual Field
+    [Arguments]    ${field_name}    ${vf_function}    ${original_field_type}
+    #选择数值类型
+    Select Numeric Type for Virtual Field
+    #设置虚拟字段表达式和名称
+    Set Expression for Numeric Virtual Field    ${field_name}    ${vf_function}    ${original_field_type}
+    #设置虚拟字段名称
+    Set Name for Virtual Field    ${field_name}    ${vf_function}
+    Click Create Virtual Field Button

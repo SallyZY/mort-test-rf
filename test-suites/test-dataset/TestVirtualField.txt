@@ -1,0 +1,67 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
+Resource          ../../pages/LoginPage.txt
+Resource          ../../test-flows/CommonFlow.txt
+Resource          ../../test-flows/VirtualFieldFlow.txt
+Resource          ../../test-results/report-result/TestVirtualFieldResult.txt
+
+*** Test Cases ***
+TestCreateTextVirtualField
+    Create a New Report by Specified Dataset    1    1
+    # 创建虚拟字段    VF_yearWithMonth_流失日期
+    Open Virtual Field Page    1
+    Create Text Virtual Field    流失日期    yearWithMonth    Datetime
+    Should See Virtual Field Created Successfully    1    VF_yearWithMonth_流失日期
+    # 创建虚拟字段    VF_lower_客户姓名
+    Open Virtual Field Page    1
+    Create Text Virtual Field    客户姓名    lower    Text
+    Should See Virtual Field Created Successfully    1    VF_lower_客户姓名
+    # 创建虚拟字段    VF_upper_客户姓名
+    Open Virtual Field Page    1
+    Create Text Virtual Field    客户姓名    upper    Text
+    Should See Virtual Field Created Successfully    1    VF_upper_客户姓名
+
+TestCreateNumericVirtualField
+    Create a New Report by Specified Dataset    1    1
+    # 创建虚拟字段    VF_ceil_流失资产
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失资产    ceil    Numeric
+    #Should See Virtual Field Created Successfully    1    VF_ceil_流失资产
+    # 创建虚拟字段    VF_floor_流失资产
+    # Open Virtual Field Page    1
+    # Create Numeric Virtual Field    流失资产    floor    Numeric
+    # Should See Virtual Field Created Successfully    1
+    # 创建虚拟字段    VF_round_流失资产
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失资产    round    Numeric
+    #Should See Virtual Field Created Successfully    1
+    # －－－－－－－－－－－－－－－
+    # 创建虚拟字段    VF_dayOfWeek_流失日期
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失日期    dayOfWeek    Datetime
+    #Should See Virtual Field Created Successfully    1    VF_dayOfWeek_流失日期
+    # 创建虚拟字段    VF_dayofmonth_流失日期
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失日期    dayofmonth    Datetime
+    #Should See Virtual Field Created Successfully    1    VF_dayofmonth_流失日期
+    # 创建虚拟字段    VF_dayofyear_流失日期
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失日期    dayofyear    Datetime
+    #Should See Virtual Field Created Successfully    1    VF_dayofyear_流失日期
+    # 创建虚拟字段    VF_weekofyear_流失日期
+    Open Virtual Field Page    1
+    Create Numeric Virtual Field    流失日期    weekofyear    Datetime
+    Should See Virtual Field Created Successfully    1    VF_weekofyear_流失日期
+    # －－－－－－－－－－－－－－－
+    # 创建虚拟字段    VF_year_流失日期
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失日期    year    Datetime
+    #Should See Virtual Field Created Successfully    1    VF_year_流失日期
+    # 创建虚拟字段    VF_quarter_流失日期
+    #Open Virtual Field Page    1
+    #Create Numeric Virtual Field    流失日期    quarter    Datetime
+    #Should See Virtual Field Created Successfully    1    VF_quarter_流失日期
+    # 创建虚拟字段    VF_month_流失日期
+    Open Virtual Field Page    1
+    Create Numeric Virtual Field    流失日期    month    Datetime
+    Should See Virtual Field Created Successfully    1    VF_month_流失日期
