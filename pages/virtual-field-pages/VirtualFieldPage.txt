@@ -21,13 +21,13 @@ Click Virtual Field Menu Icon
     Click Element    css=div.DefaultLayout > div.MainContent > div > div:nth-child(2) > div.PanelContent > div.dataSetCollection.beautiful-scrollbar > ul:nth-child(${dataset_index}) > div.data-set-item.selected > i
     Sleep    1
 
-Select Text Type for Virtual Field
-    Click Element    css=div.types > div > label:nth-child(2) > span.ant-radio > input
-
 Select Numeric Type for Virtual Field
     Click Element    css=div.types > div > label:nth-child(1) > span.ant-radio > input
 
-Select Date Type for Virtual Field
+Select Text Type for Virtual Field
+    Click Element    css=div.types > div > label:nth-child(2) > span.ant-radio > input
+
+Select Datetime Type for Virtual Field
     Click Element    css=div.types > div > label:nth-child(3) > span.ant-radio > input
 
 Click Create Virtual Field Button
@@ -57,6 +57,19 @@ Set Expression for Numeric Virtual Field
     Wait Until Element Is Visible    css=div.code-preview > div.preview.border-box.beautiful-scrollbar > table > tbody > tr:nth-child(1)    20    #没有显示预览结果
     Sleep    2
 
+Input Expression for Virtual Field
+    [Arguments]    ${expression}
+    #输入表达式
+    Input Text    css=div.code-preview > div.code.border-box > textarea    ${expression}
+    # 语法验证
+    Click Element    css=div.code-preview > div.code.border-box > a
+    Wait Until Element Is Visible    css=div.code-preview > div.preview.border-box.beautiful-scrollbar > table > tbody > tr:nth-child(1)    20    #没有显示预览结果
+    Sleep    2
+
 Set Name for Virtual Field
     [Arguments]    ${field_name}    ${vf_function}
     Input Text    css=div.name-type > div.name > input[type="text"]    VF_${vf_function}_${field_name}
+
+Input Name for Virtual Field
+    [Arguments]    ${vf_name}
+    Input Text    css=div.name-type > div.name > input[type="text"]    ${vf_name}
