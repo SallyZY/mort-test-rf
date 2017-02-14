@@ -87,3 +87,9 @@ TestCreatecomplicatedVirtualField
     Open Virtual Field Page    1
     Create Text Virtual Field by Input Expression    if($[学历] =="本科" || $[学历] =="大专") "中级" else if($[学历] =="博士" || $[学历] =="研究生") "高级" else "低级"    VF_复杂文本
     Should See Virtual Field Created Successfully    1    VF_复杂文本
+
+TestCreateVirtualMetric
+    Create a New Report by Specified Dataset    1    1
+    Open Virtual Metric Page    1
+    Create Virtual Metric    sum($[流失股基净佣金]) / sum($[流失股基交易量])    VM_佣金比交易量
+    Should See Virtual Field Created Successfully    1    VM_佣金比交易量

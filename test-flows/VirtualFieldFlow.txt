@@ -10,6 +10,10 @@ Open Virtual Field Page
     [Arguments]    ${dataset_index}
     Select Virtual Field Menu Item    ${dataset_index}
 
+Open Virtual Metric Page
+    [Arguments]    ${dataset_index}
+    Select Virtul Metric Menu Item    ${dataset_index}
+
 Create Text Virtual Field
     [Arguments]    ${field_name}    ${vf_function}    ${original_field_type}
     #选择文本类型
@@ -56,6 +60,14 @@ Create Numeric Virtual Field by Input Expression
     Select Numeric Type for Virtual Field
     #输入虚拟字段表达式
     Input Expression for Virtual Field    ${vf_expression}
-    #设置虚拟字段名称
+    #输入虚拟字段名称
     Input Name for Virtual Field    ${vf_name}
+    Click Create Virtual Field Button
+
+Create Virtual Metric
+    [Arguments]    ${vm_expression}    ${vm_name}
+    #输入聚合函数表达式
+    Input Expression for Virtual Metric    ${vm_expression}
+    #输入聚合函数名称
+    Input Name for Virtual Field    ${vm_name}
     Click Create Virtual Field Button

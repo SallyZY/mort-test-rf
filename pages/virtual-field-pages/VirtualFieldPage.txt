@@ -66,6 +66,15 @@ Input Expression for Virtual Field
     Wait Until Element Is Visible    css=div.code-preview > div.preview.border-box.beautiful-scrollbar > table > tbody > tr:nth-child(1)    20    #没有显示预览结果
     Sleep    2
 
+Input Expression for Virtual Metric
+    [Arguments]    ${expression}
+    #输入表达式
+    Input Text    css=div.code-preview > div.code.border-box > textarea    ${expression}
+    # 语法验证
+    Click Element    css=div.code-preview > div.code.border-box > a
+    Wait Until Element Is Visible    css=div.code-preview > div.preview-virtual-metric > div > div.previewTable.border-box.beautiful-scrollbar > table > tbody > tr:nth-child(1)    20    #没有显示预览结果
+    Sleep    2
+
 Set Name for Virtual Field
     [Arguments]    ${field_name}    ${vf_function}
     Input Text    css=div.name-type > div.name > input[type="text"]    VF_${vf_function}_${field_name}
