@@ -30,10 +30,30 @@ Create Numeric Virtual Field
     Set Name for Virtual Field    ${field_name}    ${vf_function}
     Click Create Virtual Field Button
 
-Create Virtual Field by Input Expression
+Create Datetime Virtual Field by Input Expression
     [Arguments]    ${vf_expression}    ${vf_name}
     #选择日期类型
     Select Datetime Type for Virtual Field
+    #输入虚拟字段表达式
+    Input Expression for Virtual Field    ${vf_expression}
+    #设置虚拟字段名称
+    Input Name for Virtual Field    ${vf_name}
+    Click Create Virtual Field Button
+
+Create Text Virtual Field by Input Expression
+    [Arguments]    ${vf_expression}    ${vf_name}
+    #选择文本类型
+    Select Text Type for Virtual Field
+    #输入虚拟字段表达式
+    Input Expression for Virtual Field    ${vf_expression}
+    #设置虚拟字段名称
+    Input Name for Virtual Field    ${vf_name}
+    Click Create Virtual Field Button
+
+Create Numeric Virtual Field by Input Expression
+    [Arguments]    ${vf_expression}    ${vf_name}
+    #选择数值类型
+    Select Numeric Type for Virtual Field
     #输入虚拟字段表达式
     Input Expression for Virtual Field    ${vf_expression}
     #设置虚拟字段名称
