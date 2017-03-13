@@ -5,7 +5,7 @@ Library           Selenium2Library
 Open Create RDB Datasource Page
     Sleep    5
     Click Link    css=div.DataSourceDirectoryTitle > div.inner > h3 > a    #click create new datasource icon
-    Click Element    css=body > div:nth-child(6) > div > div:nth-child(1) > div > div > div.types > div:nth-child(2)    #select create rdb datasource
+    Click Element    css=div.AddDataSourceTypes > div > div:nth-child(2)    #select create rdb datasource
 
 Open Create Dataset Page
     Sleep    3

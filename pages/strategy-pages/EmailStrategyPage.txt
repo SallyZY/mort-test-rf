@@ -1,0 +1,11 @@
+*** Keywords ***
+Input Email To and Cc
+    [Arguments]    ${to_user}    ${cc_user}
+
+Input Email Title
+    [Arguments]    ${email_title}
+
+Add Text for Email Content
+    [Arguments]    ${content_text}
+
+Add Report Page for Email Content

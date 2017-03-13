@@ -5,10 +5,11 @@ Resource          ../../test-flows/report-flows/CreateChartFlow.txt
 Resource          ../../pages/LoginPage.txt
 Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
 Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
-Resource          ../../test-flows/report-flows/SetChartStyleFlow.txt
-Resource          ../../test-flows/report-flows/SetKPIChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/ChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/KPIChartStyleFlow.txt
 Resource          ../../test-flows/CommonFlow.txt
 Resource          ../../pages/report-pages/ColorPickerComponent.txt
+Resource          ../../../../robot/mort-test/pages/CommonPage.txt
 
 *** Test Cases ***
 TestSetStyleOfColumnChart
@@ -25,7 +26,7 @@ TestSetStyleOfColumnChart
     Set X Axis    2
     Set Left Y Axis    3    平均流失资产
     Set Legend    4
-    Set Data Label    6
+    Set Data Label    5
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestStyleOfColumnChart.png
 
 TestSetStyleOfPieChart
@@ -76,7 +77,7 @@ TestSetStyleOfMixLineBarChart
     Set Left Y Axis    3    流失资产总和
     Set Right Y Axis    4    最流失股基交易量
     Set Legend    5
-    Set Data Label    7
+    Set Data Label    8
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfMixLineBarChart.png
 
 TestSetStyleOfAreaStackChart

@@ -1,9 +1,9 @@
 *** Settings ***
 Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
-Resource          ../test-flows/DataSetFlow.txt
-Resource          ../pages/LoginPage.txt
-Resource          ../test-results/TestResults.txt
-Resource          ../test-flows/CommonFlow.txt
+Resource          ../../pages/LoginPage.txt
+Resource          ../../test-results/TestResults.txt
+Resource          ../../test-flows/CommonFlow.txt
+Resource          ../../test-flows/DataSetFlow.txt
 
 *** Test Cases ***
 TestFileDataset
@@ -14,8 +14,9 @@ TestFileDataset
     ...    4. 查看数据预览
     ...    5. 查看数据源
     Create File Dataset    TestFileDataset
-    Should See the New Created File Dataset    TestFileDataset
-    Rename the Alias of Display Name    测试日期
+    Should See Dataset Created    1    TestFileDataset
+    #Should See the New Created File Dataset    TestFileDataset
+    Rename the Alias of Display Name    测试日期_Rename
     Sleep    3
     Check Dataset Details
     Link to File Datasource from Dataset
@@ -28,8 +29,8 @@ TestRDBDataset
     ...    4. 查看数据预览
     ...    5. 查看数据源
     Create MySQL Dataset    TestMySQLDataset
-    Should See RDB Dataset Created    TestMySQLDataset
-    Rename the Alias of Display Name    ID
+    Should See Dataset Created    2    TestMySQLDataset
+    #Rename the Alias of Display Name    ID
     Sleep    3
     Check Dataset Details
     Link to RDB Datasource from Dataset

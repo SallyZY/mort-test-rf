@@ -1,0 +1,8 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
+Resource          ../../test-flows/CommonFlow.txt
+Resource          ../../test-flows/report-flows/EmailStrategyFlow.txt
+
+*** Test Cases ***
+TestCreateEmailStrategyByManual
+    Start to Create a New Email Strategy

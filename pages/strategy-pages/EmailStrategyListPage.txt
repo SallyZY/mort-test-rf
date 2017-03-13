@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Click Create New Email Strategy Button
+    Sleep    5
+    Wait Until Element Is Visible    css=div.MainContent > div > div > div:nth-child(3) > div > div.Tabs > ul > li:nth-child(3)    20    "无法显示报表预览页面"
+    #点击邮件策略Tab
+    Click Element    css=div.MainContent > div > div > div:nth-child(3) > div > div.Tabs > ul > li:nth-child(3)
+    Wait Until Element Is Visible    css=div.emailPolicy > div.emptyToCreate > a    20    "无法显示新建邮件策略页面"
+    #点击新建策略按钮
+    Click Element    css=div.emailPolicy > div.emptyToCreate > a
+    Wait Until Element Is Visible    css=div.emailContent    20    "无法打开邮件策略－邮件内容页面"
+    #Mouse Down    xpath=/html/body/div[3]/div/div[1]/div/div/div[1]/div/div[4]/div[2]/ul/div/li
+    #Drag And Drop    xpath=/html/body/div[3]/div/div[1]/div/div/div[1]/div/div[4]/div[2]/ul/div/li    xpath=//*[@id="editor-content"]/div/div[2]/div

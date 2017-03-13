@@ -33,7 +33,7 @@ Set Data Label of Chart
     Select From List By Value    css= div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(4) > span:nth-child(2) > select    thousand
     Sleep    2
     # 设置小数点为两位
-    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    2
+    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(6) > span:nth-child(2) > select    2
     Sleep    2
 
 Set the Style of Legend

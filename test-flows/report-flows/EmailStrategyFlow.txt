@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../../pages/strategy-pages/EmailStrategyListPage.txt
+Resource          ../../pages/MainPage.txt
+Resource          ../../pages/report-pages/ReportsListPage.txt
+Resource          ../../pages/strategy-pages/EmailStrategyPage.txt
+Resource          ../../pages/CommonPage.txt
+
+*** Keywords ***
+Fill Email Content for Email Strategy
+
+Start to Create a New Email Strategy
+    Select Report Tab in Navigation Bar
+    Select Directory by Index    1
+    Click Create New Email Strategy Button

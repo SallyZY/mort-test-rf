@@ -1,10 +1,10 @@
 *** Settings ***
 Library           Selenium2Library
+Resource          ../CommonPage.txt
 
 *** Keywords ***
 Select the First DataSource Directory
-    Wait Until Element Is Visible    xpath=//ul/li[1]/span/span/div/a/div/span    20    “无法找到文件目录”
-    Click Element    xpath=//ul/li[1]/span/span/div/a/div/span
+    Select Directory by Index    1
 
 Rename the Directory
     [Arguments]    ${directory_name}
@@ -21,8 +21,3 @@ Create a New Directory
     Input Text    css=body > div:nth-child(6) > div > div > div.directory-name > input[type="text"]    ${directory_name}
     Click Link    css=body > div:nth-child(6) > div > div > div:nth-child(4) > a
     Wait Until Element Contains    css=div.directory-container    ${directory_name}
-
-Select Dataset Directory by Index
-    [Arguments]    ${dic_index}
-    Wait Until Element Is Visible    css=div.directory-container    20    ”无法显示目录区域“
-    Click Element    css=div.MainContent > div > div > div:nth-child(1) > div > div > ul > li:nth-child(${dic_index}) > span

@@ -38,7 +38,7 @@ Check Dataset Details
 
 Rename the Alias of Display Name
     [Arguments]    ${alias_name}
-    Rename the Alias of Dataset Column    ${alias_name}
+    Rename the Second Column of Dataset Column    ${alias_name}
 
 Link to RDB Datasource from Dataset
     Link to RDB Datasource

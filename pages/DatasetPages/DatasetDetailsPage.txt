@@ -2,13 +2,14 @@
 Library           Selenium2Library
 
 *** Keywords ***
-Rename the Alias of Dataset Column
+Rename the Second Column of Dataset Column
     [Arguments]    ${alias_name}
     #重命名第二个字段
+    Wait Until Element Is Visible    css=div.fields-display    20    "无法显示数据集字段预览"
     Click Element    css=div.beautiful-scrollbar.tbody > div:nth-child(2) > div > div:nth-child(3) > div > i
-    Input Text    css=div:nth-child(6) > div > div > div > div.ant-popover-inner > div > div.ant-popover-inner-content > div > input    ${alias_name}
+    Input Text    css=div:nth-child(7) > div > div > div > div.ant-popover-inner > div > div.ant-popover-inner-content > div > input    ${alias_name}
     Sleep    2
-    Click Button    css=div:nth-child(6) > div > div > div > div.ant-popover-inner > div > div.ant-popover-inner-content > div > div > button.ant-btn.ant-btn-primary.ant-btn-sm
+    Click Element    css=div:nth-child(7) > div > div > div > div.ant-popover-inner > div > div.ant-popover-inner-content > div > div > button.ant-btn.ant-btn-primary.ant-btn-sm
 
 Check Preview Data of Dataset
     Click LInk    css=div.data-set-content > div > ul > li:nth-child(2) > a
@@ -19,7 +20,11 @@ Check Import Records of Dataset
     Wait Until Element Is Visible    css=div.dataSet-import-history    20    “无法查看数据集导入纪录”
 
 Link to RDB Datasource
-    Click Element    xpath=//div[1]/div/div/div[3]/div/div[1]/div[3]
+    Wait Until Element Is Visible    xpath = //body/div[3]/div/div    20    "无法查看数据源菜单"
+    #点击更多操作菜单
+    Click Element    xpath=//div[1]/button[1]
+    #点击查看数据源选项
+    Click Element    xpath = //body/div[3]/div/div/ul/li[1]/a
 
 Link to File Datasource
     Click Element    xpath=//div[1]/div/div/div[3]/div/div[1]/div[4]

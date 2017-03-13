@@ -1,0 +1,13 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Select Source File by Index
+    [Arguments]    ${file_index}
+    Wait Until Element Is Visible    xpath=//div[1]/div[1]/div/div/div[2]/div[3]/div/div[${file_index}]    20    "无法找到该文件"
+    Click Element    xpath=//div[1]/div[1]/div/div/div[2]/div[3]/div/div[${file_index}]
+
+Select Directory by Index
+    [Arguments]    ${dic_index}
+    Wait Until Element Is Visible    css=div.directory-container    20    ”无法显示目录区域“
+    Click Element    xpath=(//div[@class='directory-parrent'])[${dic_index}]
