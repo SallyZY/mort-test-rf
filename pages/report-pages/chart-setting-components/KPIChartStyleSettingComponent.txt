@@ -55,4 +55,4 @@ Set Data Label of KPI Metric
 
 Set Data Label Die Tausendstel of KPI Metric
     [Arguments]    ${item_index}
-    Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(6) > span:nth-child(2) > span > i
+    Click Element    xpath=//div[2]/div/div[2]/div[2]/div/div/div[${item_index}]//div[7]/span[2]/span

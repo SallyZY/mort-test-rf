@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
+Resource          ../../pages/report-pages/ReportDetailsPage.txt
+Resource          ../../../../robot/mort-test/pages/CommonPage.txt
+
+*** Keywords ***
+Goto Report Page
+    [Arguments]    ${page_index}
+    Goto the Report Page by Index    ${page_index}

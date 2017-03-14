@@ -1,2 +1,31 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    ${web_url}    ${user_name}    ${password}
+Resource          ../../pages/MainPage.txt
+Resource          ../../test-flows/report-flows/CreateChartFlow.txt
+Resource          ../../pages/LoginPage.txt
+Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
+Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../../test-flows/report-flows/ChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/KPIChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/ReportOperationFlow.txt
+Resource          ../../test-flows/CommonFlow.txt
+
+*** Variables ***
+${web_url}        http://localhost:3000
+${user_name}      zhangyi@bigeyedata.com
+${password}       password
+
 *** Test Cases ***
-TestReportRegression
+TestSetStyleToCharts
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    1
+    #Set Chart Style to Cloumn Chart
+    #Set Chart Style to Pie Chart
+    #Set Chart Style to MixLineBar Chart
+    Goto Report Page    2
+    #Set Chart Style to DoubleLine Chart
+    #Set Chart Style to AreaStack Chart
+    Set Chart Style to Donut Chart
+    Goto Report Page    3
+    Set Chart Style to Funnel Chart
+    #Set Chart Style to KPI Chart

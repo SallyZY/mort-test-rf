@@ -3,7 +3,13 @@ Library           Selenium2Library
 
 *** Keywords ***
 Goto Chart Setting Panel
-    Click Element    xpath=//*[@id="app"]/div/div/div[1]/div/div[4]/div[2]/div/div[1]/div/div/div
+    [Arguments]    ${chart_index}
+    #选中视图
+    Focus    xpath=//div/div[1]/div[1]/div/div[4]/div[2]/div/div[1]/div/div/div[${chart_index}]/div
+    Mouse Over    xpath=//div/div[1]/div[1]/div/div[4]/div[2]/div/div[1]/div/div/div[${chart_index}]/div
+    Click Element    xpath=//div/div[1]/div[1]/div/div[4]/div[2]/div/div[1]/div/div/div[${chart_index}]/div/div[1]
+    #点击样式设置面板icon
+    Click Element    xpath=//div[@class='panelOptionHeader']/div[3]
     Wait Until Element Is Visible    css=div.PanelOptionContent    20
 
 Open Style Setting Item by Index
@@ -12,3 +18,8 @@ Open Style Setting Item by Index
 
 Wait Style Setting Panel Display
     Wait Until Element Is Visible    css=div.PanelOptionContent > div > div    20    “无法显示样式设置面板”
+
+Goto the Report Page by Index
+    [Arguments]    ${page_index}
+    Click Element    xpath=//div[@class='pages']/div[${page_index}]
+    Sleep    3

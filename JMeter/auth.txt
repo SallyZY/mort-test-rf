@@ -1,0 +1,2 @@
+# JMeter generated Authorization file
+127.0.0.1	zhangying@bigeyedata.com	password123	localhost		BASIC_DIGEST

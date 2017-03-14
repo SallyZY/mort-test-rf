@@ -22,12 +22,12 @@ Set Title of Chart
     Sleep    2
 
 Set Data Label of Chart
-    [Arguments]    ${data_label_item_index}
+    [Arguments]    ${data_label_item_index}    ${data_label_location}
     Wait Style Setting Panel Display
     Open Style Setting Item by Index    ${data_label_item_index}
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(1) > span:nth-child(3) > span > i
-    # 设置数据标签显示位置为“内部居中”
-    Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2) > select    inside
+    # 设置数据标签显示位置
+    Select From List By Value    xpath=//div[${data_label_item_index}]/div[2]/div[1]/span[2]/select    ${data_label_location}
     Sleep    2
     # 设置单位为“千”
     Select From List By Value    css= div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(4) > span:nth-child(2) > select    thousand

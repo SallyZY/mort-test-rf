@@ -12,7 +12,7 @@ Resource          ../../pages/report-pages/ColorPickerComponent.txt
 Resource          ../../../../robot/mort-test/pages/CommonPage.txt
 
 *** Test Cases ***
-TestSetStyleOfColumnChart
+TestSetStyleToColumnChart
     [Documentation]    柱状图测试步骤如下：
     ...    1.设置视图标题
     ...    2.打开X轴标题
@@ -29,7 +29,7 @@ TestSetStyleOfColumnChart
     Set Data Label    5
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestStyleOfColumnChart.png
 
-TestSetStyleOfPieChart
+TestSetStyleToPieChart
     [Documentation]    饼图测试步骤如下：
     ...    1.设置视图标题
     ...    2.设置图例显示位置为上部居中
@@ -42,7 +42,7 @@ TestSetStyleOfPieChart
     Set Data Label    4
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfPieChart.png
 
-TestSetStyleOfDoubleLineChart
+TestSetStyleToDoubleLineChart
     [Documentation]    双指标折线图测试步骤如下：
     ...    1.设置视图标题
     ...    2.打开X轴标题
@@ -61,7 +61,7 @@ TestSetStyleOfDoubleLineChart
     Set Data Label    7
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfDoubleLineChart.png
 
-TestSetStyleOfMixLineBarChart
+TestSetStyleToMixLineBarChart
     [Documentation]    柱状折线图测试步骤如下：
     ...    1.设置视图标题
     ...    2.打开X轴标题
@@ -80,7 +80,7 @@ TestSetStyleOfMixLineBarChart
     Set Data Label    8
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfMixLineBarChart.png
 
-TestSetStyleOfAreaStackChart
+TestSetStyleToAreaStackChart
     [Documentation]    区域堆叠图测试步骤如下：
     ...    1.设置视图标题
     ...    2.打开X轴标题
@@ -97,7 +97,7 @@ TestSetStyleOfAreaStackChart
     Set Data Label    6
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfAreaStackChart.png
 
-TestSetStyleOfKPIChart
+TestSetStyleToKPIChart
     Select Report Tab in Navigation Bar
     Goto Report Edit Page    4
     Goto Chart Style Setting Panel
@@ -116,7 +116,7 @@ TestSetStyleOfKPIChart
     Set KPI Metric DataLabel    6    none    'TRUE'
     Capture Screenshot of Current Page    ././screenshot    TestReport_TestSetStyleOfKPIChart.png
 
-TestSetStyleOfPivotTable
+TestSetStyleToPivotTable
     Select Report Tab in Navigation Bar
     Goto Report Edit Page    7
     Goto Chart Style Setting Panel

@@ -16,8 +16,8 @@ Goto Report Edit Page
     Click Edit Report Button
 
 Goto Chart Style Setting Panel
-    Goto Chart Setting Panel
-    Should See Dataset of Column Chart Expand
+    [Arguments]    ${chart_index}
+    Goto Chart Setting Panel    ${chart_index}
 
 Set Chart Title
     [Arguments]    ${chart_title}
@@ -46,4 +46,83 @@ Set Legend
 
 Set Data Label
     [Arguments]    ${data_label_item_index}
-    Set Data Label of Chart    ${data_label_item_index}
+    Set Data Label of Chart    ${data_label_item_index}    inside
+
+Set Chart Style to Pie Chart
+    #选中视图
+    Goto Chart Style Setting Panel    1
+    #设置样式
+    Set Chart Title    饼图
+    Set Legend    2
+    Set Data Label of Chart    4    bottom
+
+Set Chart Style to Cloumn Chart
+    #选中视图
+    Goto Chart Style Setting Panel    2
+    Set Chart Title    柱状图
+    Set X Axis    2
+    Set Left Y Axis    3    流失股基交易量总和
+    Set Legend    4
+    Set Data Label    5
+
+Set Chart Style to MixLineBar Chart
+    #选中视图
+    Goto Chart Style Setting Panel    4
+    Set Chart Title    柱状标折线图
+    Set X Axis    2
+    Set Left Y Axis    3    流失资产总和
+    Set Right Y Axis    4    流失资产总和
+    Set Legend    5
+    Set Data Label    8
+
+Set Chart Style to DoubleLine Chart
+    #选中视图
+    Goto Chart Style Setting Panel    4
+    Set Chart Title    双指标折线图
+    Set X Axis    2
+    Set Left Y Axis    3    平均流失股基交易量
+    Set Right Y Axis    4    流失资产总和
+    Set Legend    5
+    Set Data Label    7
+
+Set Chart Style to AreaStack Chart
+    #选中视图
+    Goto Chart Style Setting Panel    1
+    Set Chart Title    区域堆叠图
+    Set X Axis    2
+    Set Left Y Axis    3    最大流失资产
+    Set Legend    4
+    Set Data Label    6
+
+Set Chart Style to KPI Chart
+    #选中视图
+    Goto Chart Style Setting Panel    2
+    Set KPI Chart Title    KPI 视图
+    #设置第二个指标
+    Expand Metric Setting Item By Index    2
+    Set KPI Metric TItle    2    最大日期
+    Set KPI Metric DataLabel    2    none    'FALSE'
+    #设置第四个指标
+    Expand Metric Setting Item By Index    5
+    Set KPI Metric TItle    5    流失资产总和
+    Set KPI Metric DataLabel    5    tenThousand    'TRUE'
+    #设置第五个指标
+    Expand Metric Setting Item By Index    6
+    Set KPI Metric TItle    6    平均数值
+    Set KPI Metric DataLabel    6    none    'FALSE'
+
+Set Chart Style to Donut Chart
+    #选中视图
+    Goto Chart Style Setting Panel    2
+    #设置样式
+    Set Chart Title    环形饼图
+    Set Legend    2
+    Set Data Label of Chart    4    bottom
+
+Set Chart Style to Funnel Chart
+    #选中视图
+    Goto Chart Style Setting Panel    1
+    #设置样式
+    Set Chart Title    漏斗图
+    Set Legend    2
+    Set Data Label of Chart    4    bottom

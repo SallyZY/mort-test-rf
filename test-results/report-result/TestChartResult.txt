@@ -11,9 +11,6 @@ Should See Column Chart Binding Items Displayed
 Should See the Empty Chart Created
     WaitUntil Element Is Visible    xpath=//div[2]/div/img    20    “空白视图创建不成功”
 
-Should See Dataset of Column Chart Expand
-    Page Should Contain    FileDataset
-
 Should See Decimal Point of KPI Data Label Set to 2 by Default
     [Arguments]    ${item_index}
-    List Selection Should Be    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    2
+    List Selection Should Be    xpath=//div[3]/div[2]/div/div[2]/div[2]/div/div/div[${item_index}]/div[2]/div[2]/div[2]/div[6]/span[2]/select    2
