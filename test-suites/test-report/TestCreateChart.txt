@@ -2,8 +2,8 @@
 Resource          ../../pages/MainPage.txt
 Resource          ../../test-flows/report-flows/CreateChartFlow.txt
 Resource          ../../pages/LoginPage.txt
-Resource          ../../pages/DirectoryPages/FileDirectoryPage.txt
-Resource          ../../pages/DatasetPages/DatasetDetailsPage.txt
+Resource          ../../pages/directory-pages/FileDirectoryPage.txt
+Resource          ../../pages/dataset-pages/DatasetDetailsPage.txt
 Resource          ../../test-flows/report-flows/ChartStyleFlow.txt
 Resource          ../../test-flows/CommonFlow.txt
 

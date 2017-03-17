@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../../../../robot/mort-test/pages/report-pages/chart-setting-components/BindingItemComponent.txt
+
+*** Keywords ***
+Delete all Binding Items of Chart
+    [Arguments]    ${chart_index}
+    Goto Chart Binding Item Panel    ${chart_index}
+
+Goto Chart Binding Item Panel
+    [Arguments]    ${chart_index}
+    Goto Chart Setting Panel by Index    ${chart_index}    1
+    Delete Binding Item by Index    1
+    Delete Binding Item by Index    2
+    Delete Binding Item by Index    3

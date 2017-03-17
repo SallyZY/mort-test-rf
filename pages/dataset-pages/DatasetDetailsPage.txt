@@ -34,7 +34,7 @@ Select File Dataset
     Wait Until Element Is Visible    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[2]/div    20
 
 Go to New Report Page From Dataset
-    Click Element    css=div.MainContent > div > div > div:nth-child(3) > div > div.data-set-header > div:nth-child(2)
+    Click Element    xpath=//div[@class='data-set-header']/button[2]
     Wait Until Element Is Visible    css=div.ReportWorkplace    20
 
 Select Dataset by Index

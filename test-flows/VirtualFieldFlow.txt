@@ -1,8 +1,8 @@
 *** Settings ***
 Resource          ../pages/MainPage.txt
-Resource          ../pages/DatasetPages/DatasetDetailsPage.txt
-Resource          ../pages/DirectoryPages/FileDirectoryPage.txt
-Resource          ../pages/DatasetPages/FileDatasetPages/SelectFileDatasourcePage.txt
+Resource          ../pages/dataset-pages/DatasetDetailsPage.txt
+Resource          ../pages/directory-pages/FileDirectoryPage.txt
+Resource          ../pages/dataset-pages/file-dataset-pages/SelectFileDatasourcePage.txt
 Resource          ../pages/virtual-field-pages/VirtualFieldPage.txt
 
 *** Keywords ***

@@ -1,0 +1,8 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Delete Binding Item by Index
+    [Arguments]    ${binding_item_index}
+    Click Element    xpath=(//div[@class='Binding']/div[@class='Content'])[${binding_item_index}]/span/span/i[1]
+    Sleep    1

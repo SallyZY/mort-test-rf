@@ -1,0 +1,7 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Should Not See the Deleted Report
+    [Arguments]    ${report_name}
+    Element Should Not Contain    xpath=//div/div[1]/div[1]/div/div/div[2]/div[3]    ${report_name}

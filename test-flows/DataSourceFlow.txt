@@ -2,8 +2,8 @@
 Library           Selenium2Library
 Resource          ../pages/MainPage.txt
 Resource          DirectoryFlow.txt
-Resource          ../pages/DatasourcePages/ConfigRDBDatasourcePage.txt
-Resource          ../pages/DirectoryPages/FileDirectoryPage.txt
+Resource          ../pages/datasource-pages/ConfigRDBDatasourcePage.txt
+Resource          ../pages/directory-pages/FileDirectoryPage.txt
 
 *** Keywords ***
 Create MySQL Datasource

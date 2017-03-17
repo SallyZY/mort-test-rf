@@ -1,0 +1,68 @@
+*** Settings ***
+Suite Setup       Open Browser and Login Mort Web    ${web_url}    ${login_user}    ${login_password}
+Resource          ../../pages/MainPage.txt
+Resource          ../../test-flows/report-flows/CreateChartFlow.txt
+Resource          ../../pages/LoginPage.txt
+Resource          ../../pages/directory-pages/FileDirectoryPage.txt
+Resource          ../../pages/dataset-pages/DatasetDetailsPage.txt
+Resource          ../../test-flows/report-flows/ChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/KPIChartStyleFlow.txt
+Resource          ../../test-flows/report-flows/ReportOperationFlow.txt
+Resource          ../../test-flows/CommonFlow.txt
+Resource          ../../test-flows/report-flows/ChartBindingItemFlow.txt
+
+*** Variables ***
+${web_url}        http://127.0.0.1:3000
+${login_user}     support@bigeyedata.com
+${login_password}    admin
+
+*** Test Cases ***
+TestSetStyleToCharts
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    1
+    Set Chart Style to Cloumn Chart    1
+    Goto Report Sub Page    2
+    Set Chart Style to Pie Chart    1
+    Goto Report Sub Page    3
+    Set Chart Style to MixLineBar Chart    1
+    Goto Report Sub Page    4
+    Set Chart Style to DoubleLine Chart    1
+    Goto Report Sub Page    5
+    Set Chart Style to Donut Chart    1
+    Goto Report Sub Page    6
+    Set Chart Style to AreaStack Chart    1
+    Goto Report Sub Page    7
+    Set Chart Style to Funnel Chart    1
+    Goto Report Sub Page    8
+    Set Chart Style to KPI Chart    1
+    Rename and Save the Report    回归测试报表－重命名
+    Go to Report Preview Page
+
+TestDeleteViewAndReport
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    3
+    Delete all Binding Items of Chart    1
+    #删除空视图
+    Delete Chart    1
+    #删除非空视图
+    Goto Report Sub Page    2
+    Delete Chart    2
+    #删除报表页
+    Goto Report Sub Page    3
+    Delete Report Sub Page    3
+    Save the Report
+    Go to Report Preview Page
+    Delete Report    3
+    Should Not See the Deleted Report    "删除视图测试报表"
+
+TestCopyAndMoveChart
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    1
+    #Set Chart Style to DoubleLine Chart    1
+    Add New Report Sub Page
+    Goto Report Sub Page    1
+    Move Chart
+    Goto Report Sub Page    2
+    Copy Chart
+    Save the Report
+    Go to Report Preview Page

@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Open Browser and Login Mort Web    http://localhost:3000    zhangyi@bigeyedata.com    password
+Suite Setup       Open Browser and Login Mort Web    http://192.168.0.30    support@bigeyedata.com    admin
 Resource          ../../pages/LoginPage.txt
 Resource          ../../test-flows/CommonFlow.txt
 Resource          ../../test-flows/VirtualFieldFlow.txt
@@ -30,11 +30,11 @@ TestCreateNumericVirtualField
     # 创建虚拟字段    VF_floor_流失资产
     Open Virtual Field Page    1
     Create Numeric Virtual Field    流失资产    floor    Numeric
-    Should See Virtual Field Created Successfully    1
+    Should See Virtual Field Created Successfully    1    VF_floor_流失资产
     # 创建虚拟字段    VF_round_流失资产
     Open Virtual Field Page    1
     Create Numeric Virtual Field    流失资产    round    Numeric
-    Should See Virtual Field Created Successfully    1
+    Should See Virtual Field Created Successfully    1    VF_round_流失资产
     # －－－－－－－－－－－－－－－
     # 创建虚拟字段    VF_dayOfWeek_流失日期
     Open Virtual Field Page    1
@@ -70,7 +70,7 @@ TestCreateDatatimeVirtualField
     Create a New Report by Specified Dataset    1    1
     # 创建虚拟字段    VF_Datetime_endOfQuarter(1)
     Open Virtual Field Page    1
-    Create Virtual Field by Input Expression    endOfQuarter(1)    VF_Datetime_endOfQuarter(1)
+    Create Datetime Virtual Field by Input Expression    endOfQuarter(1)    VF_Datetime_endOfQuarter(1)
     Should See Virtual Field Created Successfully    1    VF_Datetime_endOfQuarter(1)
     # 创建虚拟字段    VF_Datetime_startOfWeek(0)
     Open Virtual Field Page    1
@@ -81,7 +81,7 @@ TestCreatecomplicatedVirtualField
     Create a New Report by Specified Dataset    1    1
     # 创建虚拟字段    VF_复杂数值
     Open Virtual Field Page    1
-    Create Numeric Virtual Field by Input Expression    round((dayOfWeek($[流失日期]) + $[测试数值字段]))    VF_复杂数值
+    Create Numeric Virtual Field by Input Expression    round((dayOfWeek($[流失日期]) + $[流失股基交易量]))    VF_复杂数值
     Should See Virtual Field Created Successfully    1    VF_复杂数值
     # 创建虚拟字段    VF_复杂文本
     Open Virtual Field Page    1

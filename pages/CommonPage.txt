@@ -11,3 +11,10 @@ Select Directory by Index
     [Arguments]    ${dic_index}
     Wait Until Element Is Visible    css=div.directory-container    20    ”无法显示目录区域“
     Click Element    xpath=(//div[@class='directory-parrent'])[${dic_index}]
+
+Delete Source File by Index
+    [Arguments]    ${file_index}
+    Click Element    xpath=(//div[@class='content'])[${file_index}]/div/i
+    Click Element    xpath=//body/div[3]/div/div/ul/li[2]
+    Wait Until Element Is Visible    xpath=//body/div[4]/div/div[1]    20    "无法找到删除对话框"
+    Click Element    xpath=//body/div[4]/div/div[1]/div/div/a[2]

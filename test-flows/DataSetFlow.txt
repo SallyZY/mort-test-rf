@@ -1,12 +1,12 @@
 *** Settings ***
 Resource          ../pages/MainPage.txt
 Resource          ../test-results/TestResults.txt
-Resource          ../pages/DatasetPages/RDBDatasetPages/SelectRDBDatasourcePage.txt
-Resource          ../pages/DatasetPages/DatasetDetailsPage.txt
-Resource          ../pages/DatasetPages/RDBDatasetPages/PreviewRDBDatasetColumnsPage.txt
-Resource          ../pages/DatasetPages/PreviewDatasetImportPage.txt
-Resource          ../pages/DatasetPages/FileDatasetPages/PreviewFileDatasetColumnsPage.txt
-Resource          ../pages/DatasetPages/FileDatasetPages/SelectFileDatasourcePage.txt
+Resource          ../pages/dataset-pages/rdb-dataset-pages/SelectRDBDatasourcePage.txt
+Resource          ../pages/dataset-pages/DatasetDetailsPage.txt
+Resource          ../pages/dataset-pages/rdb-dataset-pages/PreviewRDBDatasetColumnsPage.txt
+Resource          ../pages/dataset-pages/PreviewDatasetImportPage.txt
+Resource          ../pages/dataset-pages/file-dataset-pages/PreviewFileDatasetColumnsPage.txt
+Resource          ../pages/dataset-pages/file-dataset-pages/SelectFileDatasourcePage.txt
 
 *** Keywords ***
 Create File Dataset

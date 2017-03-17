@@ -15,6 +15,6 @@ Capture Screenshot of Current Page
 Create a New Report by Specified Dataset
     [Arguments]    ${dic_index}    ${dataset_index}
     Select Dataset Tab in Navigation Bar
-    Select Dataset Directory by Index    ${dic_index}
-    Select Dataset by Index    ${dataset_index}
+    Select Directory by Index    ${dic_index}
+    Select Source File by Index    ${dataset_index}
     Go to New Report Page From Dataset

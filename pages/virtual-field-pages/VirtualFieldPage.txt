@@ -5,13 +5,13 @@ Library           Selenium2Library
 Select Virtual Field Menu Item
     [Arguments]    ${dataset_index}
     Click Virtual Field Menu Icon    ${dataset_index}
-    Click Element    css=body > div:nth-child(6) > div > div > ul > li:nth-child(1)
+    Click Element    xpath=/html/body/div[2]/div/div/ul/li[1]
     Wait Until Element Is Visible    css=div.code-preview    20    找不到虚拟字段对话框
 
 Select Virtul Metric Menu Item
     [Arguments]    ${dataset_index}
     Click Virtual Field Menu Icon    ${dataset_index}
-    Click Element    css=body > div:nth-child(6) > div > div > ul > li:nth-child(3)
+    Click Element    xpath=/html/body/div[2]/div/div/ul/li[3]
     Wait Until Element Is Visible    css=div.code-preview    20    找不到虚拟指标对话框
 
 Click Virtual Field Menu Icon

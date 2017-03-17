@@ -4,6 +4,38 @@ Resource          ../../pages/report-pages/ReportDetailsPage.txt
 Resource          ../../../../robot/mort-test/pages/CommonPage.txt
 
 *** Keywords ***
-Goto Report Page
+Goto Report Sub Page
     [Arguments]    ${page_index}
     Goto the Report Page by Index    ${page_index}
+
+Rename and Save the Report
+    [Arguments]    ${report_name}
+    Rename Report    ${report_name}
+    Save Edited Report
+
+Go to Report Preview Page
+    Return Report Preview Page
+
+Delete Chart
+    [Arguments]    ${chart_index}
+    Delete Chart by Index    ${chart_index}
+
+Save the Report
+    Save Edited Report
+
+Delete Report Sub Page
+    [Arguments]    ${page_index}
+    Delete Report Sub Page by Index    ${page_index}
+
+Delete Report
+    [Arguments]    ${report_index}
+    Delete Source File by Index    ${report_index}
+
+Copy Chart
+    Copy the First Chart in Second Sub Page
+
+Move Chart
+    Move the First Chart in First Sub Page
+
+Add New Report Sub Page
+    Click Add New Report Sub Page Icon
