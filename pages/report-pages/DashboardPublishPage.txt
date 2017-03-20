@@ -1,0 +1,24 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Click Publish Dashboard Button
+    Click Element    xpath=//div[@class='dashboardTab']//a
+    Wait Until Element Is Visible    xpath=//div[@class='editDashboardTab']    20    "找不到仪表盘发布对话框"
+
+Input Dashboard Name
+    [Arguments]    ${name}
+    Input Text    xpath=(//div[@class='editDashboardTab']/div//input)[1]    ${name}
+
+Select Publish Directory by Index
+    [Arguments]    ${dict_index}
+    Click Element    xpath=(//div[@class='editDashboardTab']/div//input)[2]
+    Wait Until Element Is Visible    xpath=(//div[@class='directory-container'])[2]    20    "找不到仪表盘目录列表"
+    Click Element    xpath=(//div[@class='directory-container'])[2]/ul/li[${dict_index}]/span
+    Click Element    xpath=//div[@class='editDashboardTab']/h3
+
+Click Button to Publish New Dashboard
+    Click Element    xpath=//div[3]/div/div[2]/div/div[1]/div[2]/button[2]
+
+Set Dashboard to Visible
+    Click Element    xpath=//div[2]/div/div/div[1]/div/div/div/div/div/table/tbody/tr/td[3]/span/i

@@ -7,12 +7,21 @@ Resource          ../../pages/report-pages/chart-setting-components/ChartStyleSe
 Resource          ../../../../robot/mort-test/pages/CommonPage.txt
 
 *** Keywords ***
+Select Report from Report List
+    [Arguments]    ${report_index}
+    #Select Directory by Index    1
+    Sleep    2
+    Select Source File by Index    ${report_index}
+    Sleep    3
+
 Goto Report Edit Page
     [Arguments]    ${report_index}
-    Select Directory by Index    1
-    Sleep    5
-    Select Source File by Index    ${report_index}
+    Select Report from Report List    ${report_index}
     Click Edit Report Button
+
+Goto Report Preview Page
+    [Arguments]    ${report_index}
+    Select Report from Report List    ${report_index}
 
 Goto Chart Style Setting Panel
     [Arguments]    ${chart_index}

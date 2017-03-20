@@ -1,0 +1,7 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+Should See Report in Dashboard
+    [Arguments]    ${report_name}
+    Page Should Contain    ${report_name}

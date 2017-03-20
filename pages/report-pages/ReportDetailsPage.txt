@@ -7,3 +7,7 @@ Click Edit Report Button
     Click Element    xpath=//div[3]/div/div[1]/button
     Wait Until Element Is Visible    css=div.ReportWorkplace    20
     Sleep    5
+
+Click Tab by Index
+    [Arguments]    ${tab_index}
+    Click Element    xpath=//div[@class='reportsContent']/div/ul/li[${tab_index}]

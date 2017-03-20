@@ -30,3 +30,7 @@ Select Dataset Tab in Navigation Bar
 Select Report Tab in Navigation Bar
     Sleep    3
     Click Link    css=div.header > ul.menu > li:nth-child(3) > a    #click report tab
+
+Select Dashboard Tab in Navigation Bar
+    Sleep    3
+    Click Link    css=div.header > ul.menu > li:nth-child(4) > a    #click dashboard tab

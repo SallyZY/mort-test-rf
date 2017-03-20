@@ -13,7 +13,7 @@ Rename and Save the Report
     Rename Report    ${report_name}
     Save Edited Report
 
-Go to Report Preview Page
+Return to Report Preview Page
     Return Report Preview Page
 
 Delete Chart

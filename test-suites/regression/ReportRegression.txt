@@ -10,6 +10,8 @@ Resource          ../../test-flows/report-flows/KPIChartStyleFlow.txt
 Resource          ../../test-flows/report-flows/ReportOperationFlow.txt
 Resource          ../../test-flows/CommonFlow.txt
 Resource          ../../test-flows/report-flows/ChartBindingItemFlow.txt
+Resource          ../../test-flows/report-flows/DashboardFlow.txt
+Resource          ../../test-results/report-result/TestDashboardResult.txt
 
 *** Variables ***
 ${web_url}        http://127.0.0.1:3000
@@ -58,7 +60,7 @@ TestDeleteViewAndReport
 TestCopyAndMoveChart
     Select Report Tab in Navigation Bar
     Goto Report Edit Page    1
-    #Set Chart Style to DoubleLine Chart    1
+    Set Chart Style to DoubleLine Chart    1
     Add New Report Sub Page
     Goto Report Sub Page    1
     Move Chart
@@ -66,3 +68,11 @@ TestCopyAndMoveChart
     Copy Chart
     Save the Report
     Go to Report Preview Page
+
+TestPublishDashboard
+    Select Report Tab in Navigation Bar
+    Goto Report Preview Page    4
+    Publish a New Dashboard    回归测试仪表盘
+    Select Dashboard Tab in Navigation Bar
+    Should See Report in Dashboard    回归测试仪表盘
+    Expand Dashboard to Full Screen

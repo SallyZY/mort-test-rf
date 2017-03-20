@@ -1,0 +1,18 @@
+*** Settings ***
+Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
+Resource          ../../pages/report-pages/ReportDetailsPage.txt
+Resource          ../../pages/report-pages/DashboardPublishPage.txt
+Resource          ../../../../robot/mort-test/pages/CommonPage.txt
+
+*** Keywords ***
+Publish a New Dashboard
+    [Arguments]    ${name}
+    Click Tab by Index    2
+    Click Publish Dashboard Button
+    Input Dashboard Name    ${name}
+    Select Publish Directory by Index    1
+    Click Button to Publish New Dashboard
+    Set Dashboard to Visible
+
+Expand Dashboard to Full Screen
+    Click Element    xpath=//div[@class='dashboardTopBar']/section/a/i
