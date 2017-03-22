@@ -78,15 +78,15 @@ TestDeleteViewAndReport
     Select Dashboard Tab in Navigation Bar
     Select Report Tab in Navigation Bar
     Goto Report Edit Page    3
-    #Delete all Binding Items of Chart    1
+    Delete all Binding Items of Chart    1
     #删除空视图
-    #Delete Chart    1
+    Delete Chart    1
     #删除非空视图
-    #Goto Report Sub Page    2
-    #Delete Chart    2
+    Goto Report Sub Page    2
+    Delete Chart    2
     #删除报表页
-    #Goto Report Sub Page    3
-    #Delete Report Sub Page    3
+    Goto Report Sub Page    3
+    Delete Report Sub Page    3
     Save the Report
     Return to Report Preview Page
     Delete Report    3
