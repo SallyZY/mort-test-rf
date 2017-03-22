@@ -1,5 +1,6 @@
 *** Settings ***
 Resource          ../pages/MainPage.txt
+Resource          ../pages/directory-pages/FileDirectoryPage.txt
 
 *** Keywords ***
 Create and Select a New Datasource Directory
@@ -7,3 +8,7 @@ Create and Select a New Datasource Directory
     Select Datasource Tab in Navigation Bar
     Create a New Directory    MyDataSource
     Select the Third Directory
+
+Create New Directory
+    [Arguments]    ${directory_name}
+    Create a New Directory by Name    ${directory_name}

@@ -10,5 +10,5 @@ Preview Query Result
     Input Text    xpath=//textarea    select * from tab_production
     Click Element    css= div.clearfix > div:nth-child(1) > a
     Wait Until Element Is Visible    css=table.mort-table    20
-    Sleep    5
+    Sleep    ${long_sleep}
     Click Element    css=div:nth-child(6) > div > div:nth-child(1) > div > div > div:nth-child(2) > div > div > div:nth-child(2) > a:nth-child(3)    #next step

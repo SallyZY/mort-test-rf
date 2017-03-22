@@ -8,11 +8,11 @@ Create a New User
     Click Button    css=div.manageOperation > button
     Wait Until Element Is Visible    css=div.ant-modal-content    20    ”找不到创建用户对话框“
     Input Text    css=div.ant-modal-content > div.ant-modal-body > div > dl > dd:nth-child(1) > input    ${user_name}
-    Sleep    2
+    Sleep    ${short_sleep}
     Input Text    css=div.ant-modal-content > div.ant-modal-body > div > dl > dd:nth-child(2) > input    TestUser@test.com
-    Sleep    2
+    Sleep    ${short_sleep}
     Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
-    Sleep    5
+    Sleep    ${long_sleep}
     Element Should Contain    css=div.userListTable.manageTable > div.tbody    ${user_name}
 
 Create a New Role
@@ -21,14 +21,14 @@ Create a New Role
     Click Button    css=div.manageOperation > button:nth-child(1)
     Wait Until Element Is Visible    css=div.ant-modal-content    20    “找不新建角色对话框”
     Input Text    css=div > div.role-name > input    ${role_name}
-    Sleep    2
+    Sleep    ${short_sleep}
     Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(1) > div > div:nth-child(2) > span > i
     Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(2) > div > div:nth-child(2) > span > i
     Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(3) > div > div:nth-child(2) > span > i
     Click Element    css=div.ant-modal-body > div > div.divTable.create-role-dialog > div.tbody.beautiful-scrollbar > div:nth-child(4) > div > div:nth-child(2) > span > i
-    Sleep    2
+    Sleep    ${short_sleep}
     Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
-    Sleep    2
+    Sleep    ${short_sleep}
     Element Should Contain    css=div.roleListTable.manageTable    ${role_name}
 
 Create a New User Group
@@ -37,9 +37,9 @@ Create a New User Group
     Click Button    css=div.manageOperation > button:nth-child(1)
     Wait Until Element Is Visible    css=div.ant-modal-content    20    ”找不到创建用户组对话框“
     Input Text    css= div.ant-modal-body > div > div > p > input    ${group_name}
-    Sleep    2
+    Sleep    ${short_sleep}
     Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
-    Sleep    2
+    Sleep    ${short_sleep}
     Element Should Contain    css=div.MainContent > div > div > div > div:nth-child(1) > div.user-group-list-table.manageTable    ${group_name}
 
 Open User List Page
@@ -77,6 +77,6 @@ Modify User Group Name
     Click Element    css=div.user-group-list-table.manageTable > div.tbody > div:nth-child(2) > div > div.operation > span:nth-child(3)
     Wait Until Element Is Visible    css=div.ant-modal-content    20    “找不到修改用户组名对话框”
     Input Text    css=div.ant-modal-body > div > div > p > input    ${group_name}
-    Sleep    2
+    Sleep    ${short_sleep}
     Click Button    css=div.ant-modal-footer > button.ant-btn.ant-btn-primary
     Wait Until Element Contains    css=div.user-group-list-table.manageTable    ${group_name}

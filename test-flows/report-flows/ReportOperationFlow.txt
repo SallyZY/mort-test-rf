@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
 Resource          ../../pages/report-pages/ReportDetailsPage.txt
-Resource          ../../../../robot/mort-test/pages/CommonPage.txt
+Resource          ../../pages/CommonPage.txt
 
 *** Keywords ***
 Goto Report Sub Page

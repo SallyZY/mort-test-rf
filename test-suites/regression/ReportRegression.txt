@@ -1,5 +1,8 @@
 *** Settings ***
-Suite Setup       Open Browser and Login Mort Web    ${web_url}    ${login_user}    ${login_password}
+Suite Setup
+Suite Teardown
+Test Setup        Open Browser and Login Mort Web    ${web_url}    ${login_user}    ${login_password}
+Test Teardown     Logout and Close Browser
 Resource          ../../pages/MainPage.txt
 Resource          ../../test-flows/report-flows/CreateChartFlow.txt
 Resource          ../../pages/LoginPage.txt
@@ -12,16 +15,21 @@ Resource          ../../test-flows/CommonFlow.txt
 Resource          ../../test-flows/report-flows/ChartBindingItemFlow.txt
 Resource          ../../test-flows/report-flows/DashboardFlow.txt
 Resource          ../../test-results/report-result/TestDashboardResult.txt
+Resource          ../../test-results/report-result/TestReportResult.txt
+Resource          ../../test-flows/DirectoryFlow.txt
 
 *** Variables ***
 ${web_url}        http://127.0.0.1:3000
 ${login_user}     support@bigeyedata.com
 ${login_password}    admin
+${long_sleep}     3
+${short_sleep}    1
 
 *** Test Cases ***
 TestSetStyleToCharts
+    Select Dashboard Tab in Navigation Bar
     Select Report Tab in Navigation Bar
-    Goto Report Edit Page    1
+    Goto Report Edit Page    2
     Set Chart Style to Cloumn Chart    1
     Goto Report Sub Page    2
     Set Chart Style to Pie Chart    1
@@ -38,26 +46,10 @@ TestSetStyleToCharts
     Goto Report Sub Page    8
     Set Chart Style to KPI Chart    1
     Rename and Save the Report    回归测试报表－重命名
-    Go to Report Preview Page
-
-TestDeleteViewAndReport
-    Select Report Tab in Navigation Bar
-    Goto Report Edit Page    3
-    Delete all Binding Items of Chart    1
-    #删除空视图
-    Delete Chart    1
-    #删除非空视图
-    Goto Report Sub Page    2
-    Delete Chart    2
-    #删除报表页
-    Goto Report Sub Page    3
-    Delete Report Sub Page    3
-    Save the Report
-    Go to Report Preview Page
-    Delete Report    3
-    Should Not See the Deleted Report    "删除视图测试报表"
+    Return to Report Preview Page
 
 TestCopyAndMoveChart
+    Select Dashboard Tab in Navigation Bar
     Select Report Tab in Navigation Bar
     Goto Report Edit Page    1
     Set Chart Style to DoubleLine Chart    1
@@ -67,12 +59,35 @@ TestCopyAndMoveChart
     Goto Report Sub Page    2
     Copy Chart
     Save the Report
-    Go to Report Preview Page
+    Return to Report Preview Page
 
 TestPublishDashboard
+    #创建仪表盘目录
+    Select Dashboard Tab in Navigation Bar
+    Create New Directory    测试－仪表盘目录
+    #发布仪表盘
     Select Report Tab in Navigation Bar
     Goto Report Preview Page    4
     Publish a New Dashboard    回归测试仪表盘
     Select Dashboard Tab in Navigation Bar
     Should See Report in Dashboard    回归测试仪表盘
+    #全屏显示仪表盘
     Expand Dashboard to Full Screen
+
+TestDeleteViewAndReport
+    Select Dashboard Tab in Navigation Bar
+    Select Report Tab in Navigation Bar
+    Goto Report Edit Page    3
+    #Delete all Binding Items of Chart    1
+    #删除空视图
+    #Delete Chart    1
+    #删除非空视图
+    #Goto Report Sub Page    2
+    #Delete Chart    2
+    #删除报表页
+    #Goto Report Sub Page    3
+    #Delete Report Sub Page    3
+    Save the Report
+    Return to Report Preview Page
+    Delete Report    3
+    Should Not See the Deleted Report    "删除视图测试报表"

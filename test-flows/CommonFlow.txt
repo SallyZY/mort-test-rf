@@ -1,5 +1,6 @@
 *** Settings ***
 Resource          ../pages/LoginPage.txt
+Resource          ../pages/MainPage.txt
 
 *** Keywords ***
 Open Browser and Login Mort Web
@@ -18,3 +19,13 @@ Create a New Report by Specified Dataset
     Select Directory by Index    ${dic_index}
     Select Source File by Index    ${dataset_index}
     Go to New Report Page From Dataset
+
+Logout and Close Browser
+    #Logout System
+    Close Browser
+
+Close All Browsers
+    Close All Browsers
+
+Maximize Browser
+    Maximize Browser Window

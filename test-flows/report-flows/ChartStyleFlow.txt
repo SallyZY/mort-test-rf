@@ -4,15 +4,14 @@ Resource          ../../pages/report-pages/ReportWorkSpacePage.txt
 Resource          ../../pages/report-pages/ReportDetailsPage.txt
 Resource          ../../test-results/report-result/TestChartResult.txt
 Resource          ../../pages/report-pages/chart-setting-components/ChartStyleSettingComponent.txt
-Resource          ../../../../robot/mort-test/pages/CommonPage.txt
+Resource          ../../pages/CommonPage.txt
+Resource          ../../pages/report-pages/chart-setting-components/KPIChartStyleSettingComponent.txt
 
 *** Keywords ***
 Select Report from Report List
     [Arguments]    ${report_index}
-    #Select Directory by Index    1
-    Sleep    2
+    Select Directory by Index    1
     Select Source File by Index    ${report_index}
-    Sleep    3
 
 Goto Report Edit Page
     [Arguments]    ${report_index}
@@ -111,19 +110,19 @@ Set Chart Style to KPI Chart
     [Arguments]    ${chart_index}
     #选中视图
     Goto Chart Style Setting Panel    ${chart_index}
-    Set KPI Chart Title    KPI 视图
+    Set Title of KPI Chart    KPI 视图
     #设置第二个指标
     Expand Metric Setting Item By Index    2
-    Set KPI Metric TItle    2    最大日期
-    Set KPI Metric DataLabel    2    none    'FALSE'
+    Set Title of KPI Metric    2    最大日期
+    Set Data Label of KPI Metric    2    none    'FALSE'
     #设置第四个指标
     Expand Metric Setting Item By Index    5
-    Set KPI Metric TItle    5    流失资产总和
-    Set KPI Metric DataLabel    5    tenThousand    'TRUE'
+    Set Title of KPI Metric    5    流失资产总和
+    Set Data Label of KPI Metric    5    tenThousand    'TRUE'
     #设置第五个指标
     Expand Metric Setting Item By Index    6
-    Set KPI Metric TItle    6    平均数值
-    Set KPI Metric DataLabel    6    none    'FALSE'
+    Set Title of KPI Metric    6    平均数值
+    Set Data Label of KPI Metric    6    none    'FALSE'
 
 Set Chart Style to Donut Chart
     [Arguments]    ${chart_index}

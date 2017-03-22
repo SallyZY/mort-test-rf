@@ -8,7 +8,7 @@ Rename the Second Column of Dataset Column
     Wait Until Element Is Visible    css=div.fields-display    20    "无法显示数据集字段预览"
     Click Element    css=div.beautiful-scrollbar.tbody > div:nth-child(2) > div > div:nth-child(3) > div > i
     Input Text    css=div:nth-child(7) > div > div > div > div.ant-popover-inner > div > div.ant-popover-inner-content > div > input    ${alias_name}
-    Sleep    2
+    Sleep    ${sort_sleep}
     Click Element    css=div:nth-child(7) > div > div > div > div.ant-popover-inner > div > div.ant-popover-inner-content > div > div > button.ant-btn.ant-btn-primary.ant-btn-sm
 
 Check Preview Data of Dataset

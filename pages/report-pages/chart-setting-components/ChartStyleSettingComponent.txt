@@ -13,13 +13,13 @@ Set Title of Chart
     Click Element    xpath=//div[2]/div[2]/div/div/div[1]/div[1]
     # 设置视图标题
     Input Text    xpath=//div[1]//div[2]/div[2]/div/div/div[1]/div[2]/div[1]/span[2]/input    ${chart_title}
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置标题居中
     Click Element    xpath=//div[1]/div[2]/div[2]/span[2]/div/input[2]
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置标题字体大小
     Select From List By Value    xpath=//div[1]/div[2]/div[4]/span[2]/select    14
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Set Data Label of Chart
     [Arguments]    ${data_label_item_index}    ${data_label_location}
@@ -28,13 +28,13 @@ Set Data Label of Chart
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(1) > span:nth-child(3) > span > i
     # 设置数据标签显示位置
     Select From List By Value    xpath=//div[${data_label_item_index}]/div[2]/div[1]/span[2]/select    ${data_label_location}
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置单位为“千”
     Select From List By Value    css= div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(4) > span:nth-child(2) > select    thousand
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置小数点为两位
     Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${data_label_item_index}) > div:nth-child(2) > div:nth-child(6) > span:nth-child(2) > select    2
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Set the Style of Legend
     [Arguments]    ${legend_item_index}
@@ -53,7 +53,7 @@ Open Title of X Axis
     Open Style Setting Item by Index    ${x_axis_item_index}
     # 打开X轴标题
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${x_axis_item_index}) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > span > i
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Open Title of Left Y Axis
     [Arguments]    ${y_axis_item_index}
@@ -62,7 +62,7 @@ Open Title of Left Y Axis
     Open Style Setting Item by Index    ${y_axis_item_index}
     # 打开Y轴标题
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${y_axis_item_index}) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > span > i
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Open Title of Right Y Axis
     [Arguments]    ${y_axis_item_index}
@@ -71,7 +71,7 @@ Open Title of Right Y Axis
     Open Style Setting Item by Index    ${y_axis_item_index}
     # 打开Y轴标题
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${y_axis_item_index}) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > span > i
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Set Alias of Left Y Axis
     [Arguments]    ${y_axis_item_index}    ${metric_alias_name}
@@ -90,10 +90,10 @@ Set Data Label of Left Y Axis
     Wait Style Setting Panel Display
     #设置小数点为1位
     Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${y_axis_item_index}) > div:nth-child(2) > div:nth-child(7) > span:nth-child(2) > select    1
-    Sleep    2
+    Sleep    ${short_sleep}
     #打开千分位分隔符
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${y_axis_item_index}) > div:nth-child(2) > div:nth-child(8) > span:nth-child(2) > span > i
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Set Data Label of Right Y Axis
     [Arguments]    ${y_axis_item_index}
@@ -102,4 +102,4 @@ Set Data Label of Right Y Axis
     Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${y_axis_item_index}) > div:nth-child(2) > div:nth-child(6) > span:nth-child(2) > select    tenThousand
     #设置小数点为1位
     Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${y_axis_item_index}) > div:nth-child(2) > div:nth-child(7) > span:nth-child(2) > select    1
-    Sleep    2
+    Sleep    ${short_sleep}

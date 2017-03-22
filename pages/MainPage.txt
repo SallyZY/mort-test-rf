@@ -3,34 +3,39 @@ Library           Selenium2Library
 
 *** Keywords ***
 Open Create RDB Datasource Page
-    Sleep    5
+    Sleep    ${long_sleep}
     Click Link    css=div.DataSourceDirectoryTitle > div.inner > h3 > a    #click create new datasource icon
     Click Element    css=div.AddDataSourceTypes > div > div:nth-child(2)    #select create rdb datasource
 
 Open Create Dataset Page
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.DataSetDirectoryTitle > div > h3 > a
 
 Open Create Report Page
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.DataSetDirectoryTitle > div > h3 > a
 
 Open User Management Page
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.header > ul.menu > li:nth-child(5) > a
 
 Select Datasource Tab in Navigation Bar
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.header > ul.menu > li:nth-child(1) > a    #click datasource tab
 
 Select Dataset Tab in Navigation Bar
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.header > ul.menu > li:nth-child(2) > a    #click dataset tab
 
 Select Report Tab in Navigation Bar
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.header > ul.menu > li:nth-child(3) > a    #click report tab
 
 Select Dashboard Tab in Navigation Bar
-    Sleep    3
+    Sleep    ${long_sleep}
     Click Link    css=div.header > ul.menu > li:nth-child(4) > a    #click dashboard tab
+
+Logout System
+    Mouse Over    xpath=//*[@id="app"]/div/div/div[2]/ul[3]/li[2]/a/i
+    Mouse Over    xpath=//body/div[3]/div/div/ul/li[3]
+    Click Element    xpath=//body/div[3]/div/div/ul/li[3]

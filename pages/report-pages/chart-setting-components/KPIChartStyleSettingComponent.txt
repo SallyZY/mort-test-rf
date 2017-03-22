@@ -11,13 +11,13 @@ Set Title of KPI Chart
     Click Element    xpath=//div[2]/div[2]/div/div/div[1]/div[1]
     # 设置视图标题
     Input Text    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2) > input    ${chart_title}
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置标题居中
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > div > input[type="radio"]:nth-child(3)
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置标题字体大小
     Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    14
-    Sleep    2
+    Sleep    ${short_sleep}
 
 Expand Metric Setting Item By Index
     [Arguments]    ${item_index}
@@ -30,13 +30,13 @@ Set Title of KPI Metric
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)
     # 设置视图标题
     Input Text    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(2) > input    ${metric_title}
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置标题居左
     Click Element    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > span:nth-child(2) > div > input[type="radio"]:nth-child(1)
-    Sleep    2
+    Sleep    ${short_sleep}
     # 设置标题字体大小为16
     Select From List By Value    css=div.PanelOptionContent > div > div > div:nth-child(${item_index}) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > span:nth-child(2) > select    16
-    S leep    2
+    S leep    ${short_sleep}
 
 Set Data Label of KPI Metric
     [Arguments]    ${item_index}    ${dataLabel_unit}    ${is_set_dieTausendstel}

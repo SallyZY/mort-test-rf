@@ -3,7 +3,7 @@ Library           Selenium2Library
 
 *** Keywords ***
 Click Create New Email Strategy Button
-    Sleep    5
+    Sleep    ${long_sleep}
     Wait Until Element Is Visible    css=div.MainContent > div > div > div:nth-child(3) > div > div.Tabs > ul > li:nth-child(3)    20    "无法显示报表预览页面"
     #点击邮件策略Tab
     Click Element    css=div.MainContent > div > div > div:nth-child(3) > div > div.Tabs > ul > li:nth-child(3)

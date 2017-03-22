@@ -13,11 +13,11 @@ Rename the Directory
     Click Element    css=body > div:nth-child(8) > div > div > ul > li:nth-child(1)
     Input Text
 
-Create a New Directory
+Create a New Directory by Name
     [Arguments]    ${directory_name}
     Wait Until Element Is Visible    css=div.directory-container    20    ”无法显示目录区域“
     Click Element    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[1]/div/div/div[1]/div/div/div[2]/span[2]
-    Click Link    css=body > div:nth-child(6) > div > div > ul > div > a
-    Input Text    css=body > div:nth-child(6) > div > div > div.directory-name > input[type="text"]    ${directory_name}
-    Click Link    css=body > div:nth-child(6) > div > div > div:nth-child(4) > a
+    Click Link    xpath=//body/div[3]/div/div/ul/div/a
+    Input Text    xpath=//body/div[3]/div/div/div[2]/input    ${directory_name}
+    Click Link    xpath=//body/div[3]/div/div/div[3]/a
     Wait Until Element Contains    css=div.directory-container    ${directory_name}
