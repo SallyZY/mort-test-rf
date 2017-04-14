@@ -2,7 +2,7 @@
 Suite Setup
 Suite Teardown
 Test Setup        Open Browser and Login Mort Web    ${web_url}    ${login_user}    ${login_password}
-Test Teardown     Logout and Close Browser
+Test Teardown
 Resource          ../../pages/MainPage.txt
 Resource          ../../test-flows/report-flows/CreateChartFlow.txt
 Resource          ../../pages/LoginPage.txt
@@ -26,6 +26,8 @@ ${long_sleep}     3
 ${short_sleep}    1
 
 *** Test Cases ***
+TestCreateFileDataset
+
 TestSetStyleToCharts
     Select Dashboard Tab in Navigation Bar
     Select Report Tab in Navigation Bar
