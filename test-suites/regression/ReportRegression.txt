@@ -19,9 +19,9 @@ Resource          ../../test-results/report-result/TestReportResult.txt
 Resource          ../../test-flows/DirectoryFlow.txt
 
 *** Variables ***
-${web_url}        http://127.0.0.1:3000
-${login_user}     support@bigeyedata.com
-${login_password}    admin
+${web_url}        http://localhost:3000
+${login_user}     zhangying@bigeyedata.com
+${login_password}    password123
 ${long_sleep}     3
 ${short_sleep}    1
 
@@ -93,3 +93,11 @@ TestDeleteViewAndReport
     Return to Report Preview Page
     Delete Report    3
     Should Not See the Deleted Report    "删除视图测试报表"
+
+TestDragBindingItem
+    Select Dataset Tab in Navigation Bar
+    Select Directory by Index    2
+    Select Source File by Index    1
+    Go to New Report Page From Dataset
+    Sleep    5
+    Drag the First Field

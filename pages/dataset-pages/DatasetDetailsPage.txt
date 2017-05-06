@@ -34,9 +34,12 @@ Select File Dataset
     Wait Until Element Is Visible    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[3]/div/div[2]/div    20
 
 Go to New Report Page From Dataset
-    Click Element    xpath=//div[@class='data-set-header']/button[2]
-    Wait Until Element Is Visible    css=div.ReportWorkplace    20
+    Click Element    id=addNewReport
+    Wait Until Element Is Visible    id=reportWorkingSpaceContainer    20
 
 Select Dataset by Index
     [Arguments]    ${dataset_index}
     Click Element    css=div.MainContent > div > div > div:nth-child(2) > div.DataSetsList.beautiful-scrollbar > div > div:nth-child(${dataset_index})
+
+Drag the First Field
+    Drag and Drop    xpath=//div[@id='reportDataSetCollection']//ul[@class='data-set-list'][1]//li[2]    xpath=(//div[@id='reportBindingsContainer']//div[@class='Content'])[1]

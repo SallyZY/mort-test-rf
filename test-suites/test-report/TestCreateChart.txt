@@ -10,7 +10,7 @@ Resource          ../../test-flows/CommonFlow.txt
 *** Test Cases ***
 TestCreateColumnChart
     Select Dataset Tab in Navigation Bar
-    Select the First Directory
+    Select Directory by Index    1
     Select File Dataset
     Create a New Report From File Dataset
     Create Column Chart

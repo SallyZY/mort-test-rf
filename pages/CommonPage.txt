@@ -4,15 +4,15 @@ Library           Selenium2Library
 *** Keywords ***
 Select Source File by Index
     [Arguments]    ${file_index}
-    Wait Until Element Is Visible    xpath=(//div/div/div[1]/div/div/div[2]/div[3]/div)[1]    20    "无法找到该文件"
-    Click Element    xpath=(//div/div/div[1]/div/div/div[2]/div[3]/div)[1]/div[${file_index}]
+    Wait Until Element Is Visible    xpath=//div[@id='resourceListItemsContainer']    20    "无法显示资源列表"
+    Click Element    xpath=(//div[@id='resourceListItemsContainer']//div[@class='content'])[${file_index}]
     Log    "Source File"
     Sleep    ${long_sleep}
 
 Select Directory by Index
     [Arguments]    ${dic_index}
-    Wait Until Element Is Visible    css=div.directory-container    20    ”无法显示目录区域“
-    Click Element    xpath=//*[@id="app"]/div/div/div[1]/div/div/div[1]/div/div/ul/li[${dic_index}]/span
+    Wait Until Element Is Visible    id=mainPageDirectoriesContainer    20    ”无法显示目录区域“
+    Click Element    xpath=//ul[@id='mainPageDirectoriesContainer']/li[${dic_index}]/span
     Log    "directory"
     Sleep    ${long_sleep}
 
